@@ -1,0 +1,305 @@
+<!doctype html><html lang=en><head><meta charset=utf-8><meta name=description content="GraphQL What is GraphQL? Yet another communication standard Mainly for client ⇔ server GraphQL is typically served over HTTP Contrary to REST we use a single endpoint GraphQL services typically respond using JSON (yet not required by the spec) Data model With GraphQL you think of data as a graph of nodes."><meta property="og:title" content><meta property="og:description" content="GraphQL What is GraphQL? Yet another communication standard Mainly for client ⇔ server GraphQL is typically served over HTTP Contrary to REST we use a single endpoint GraphQL services typically respond using JSON (yet not required by the spec) Data model With GraphQL you think of data as a graph of nodes."><meta property="og:type" content="website"><meta property="og:image" content="https://deep-thought.norwin.aticon.png"><meta property="og:url" content="https://deep-thought.norwin.at/tech-kb/web-development/GraphQL/"><meta property="og:width" content="200"><meta property="og:height" content="200"><meta name=twitter:card content="summary"><meta name=twitter:title content><meta name=twitter:description content="GraphQL What is GraphQL? Yet another communication standard Mainly for client ⇔ server GraphQL is typically served over HTTP Contrary to REST we use a single endpoint GraphQL services typically respond using JSON (yet not required by the spec) Data model With GraphQL you think of data as a graph of nodes."><meta name=twitter:image content="https://deep-thought.norwin.aticon.png"><meta name=twitter:site content="n0rwin"><title>🧠 Deep Thought 🧠</title><meta name=viewport content="width=device-width,initial-scale=1"><link rel="shortcut icon" type=image/png href=https://deep-thought.norwin.at/icon.png><link href=https://deep-thought.norwin.at/styles.19109a40042e9f0e72e952fda4442a34.min.css rel=stylesheet><link href=https://deep-thought.norwin.at/styles/_light_syntax.86a48a52faebeaaf42158b72922b1c90.min.css rel=stylesheet id=theme-link><script src=https://deep-thought.norwin.at/js/darkmode.f066e51f8083fef89292fd03cdfcc9f0.min.js></script>
+<script src=https://deep-thought.norwin.at/js/util.00639692264b21bc3ee219733d38a8be.min.js></script>
+<link rel=preload href=https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css as=style onload='this.onload=null,this.rel="stylesheet"' integrity=sha384-R4558gYOUz8mP9YWpZJjofhk+zx0AS11p36HnD2ZKj/6JR5z27gSSULCNHIRReVs crossorigin=anonymous><script defer src=https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js integrity=sha384-z1fJDqw8ZApjGO3/unPWUPsIymfsJmyrDVWC8Tv/a1HeOtGmkwNd/7xUS0Xcnvsx crossorigin=anonymous></script>
+<script defer src=https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/contrib/auto-render.min.js integrity=sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR crossorigin=anonymous></script>
+<script defer src=https://cdn.jsdelivr.net/npm/katex@0.16.2/dist/contrib/copy-tex.min.js integrity=sha384-ww/583aHhxWkz5DEVn6OKtNiIaLi2iBRNZXfJRiY1Ai7tnJ9UXpEsyvOITVpTl4A crossorigin=anonymous></script>
+<script type=module>
+      import mermaid from 'https://unpkg.com/mermaid@9/dist/mermaid.esm.min.mjs';
+      mermaid.initialize({ startOnLoad: true });
+    </script><script src=https://cdn.jsdelivr.net/npm/@floating-ui/core@1.2.1></script>
+<script src=https://cdn.jsdelivr.net/npm/@floating-ui/dom@1.2.1></script>
+<script defer src=https://deep-thought.norwin.at/js/popover.aa9bc99c7c38d3ae9538f218f1416adb.min.js></script>
+<script defer src=https://deep-thought.norwin.at/js/code-title.ce4a43f09239a9efb48fee342e8ef2df.min.js></script>
+<script defer src=https://deep-thought.norwin.at/js/clipboard.2913da76d3cb21c5deaa4bae7da38c9f.min.js></script>
+<script defer src=https://deep-thought.norwin.at/js/callouts.7723cac461d613d118ee8bb8216b9838.min.js></script>
+<script>const SEARCH_ENABLED=!1,LATEX_ENABLED=!0,PRODUCTION=!0,BASE_URL="https://deep-thought.norwin.at",fetchData=Promise.all([fetch("https://deep-thought.norwin.at/indices/linkIndex.764405ba10772eb8cfce790ad48f3c1e.min.json").then(e=>e.json()).then(e=>({index:e.index,links:e.links})),fetch("https://deep-thought.norwin.at/indices/contentIndex.3b1ba85257ed0319ca853aa536f3539b.min.json").then(e=>e.json())]).then(([{index:e,links:t},n])=>({index:e,links:t,content:n})),render=()=>{const e=new URL(BASE_URL),t=e.pathname,n=window.location.pathname,s=t==n;addCopyButtons(),addTitleToCodeBlocks(),addCollapsibleCallouts(),initPopover("https://deep-thought.norwin.at",!0);const o=document.getElementById("footer");if(o){const e=document.getElementById("graph-container");if(!e)return requestAnimationFrame(render);e.textContent="";const t=s&&!1;drawGraph("https://deep-thought.norwin.at",t,[{"/moc":"#4388cc"}],t?{centerForce:1,depth:-1,enableDrag:!0,enableLegend:!1,enableZoom:!0,fontSize:.5,linkDistance:1,opacityScale:3,repelForce:1,scale:1.4}:{centerForce:1,depth:1,enableDrag:!0,enableLegend:!1,enableZoom:!0,fontSize:.6,linkDistance:1,opacityScale:3,repelForce:2,scale:1.2})}var i=document.getElementsByClassName("mermaid");i.length>0&&import("https://unpkg.com/mermaid@9/dist/mermaid.esm.min.mjs").then(e=>{e.default.init()});function a(e){const t=e.target,n=t.className.split(" "),s=n.includes("broken"),o=n.includes("internal-link");plausible("Link Click",{props:{href:t.href,broken:s,internal:o,graph:!1}})}const r=document.querySelectorAll("a");for(link of r)link.className.includes("root-title")&&link.addEventListener("click",a,{once:!0})},init=(e=document)=>{addCopyButtons(),addTitleToCodeBlocks(),renderMathInElement(e.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"$",right:"$",display:!1}],macros:{"’":"'"},throwOnError:!1})}</script><script type=module>
+    import { attachSPARouting } from "https:\/\/deep-thought.norwin.at\/js\/router.d6fe6bd821db9ea97f9aeefae814d8e7.min.js"
+    attachSPARouting(init, render)
+  </script><script defer data-domain=deep-thought.norwin.at src=https://plausible.io/js/script.js></script>
+<script>window.plausible=window.plausible||function(){(window.plausible.q=window.plausible.q||[]).push(arguments)}</script></head><body><div id=search-container><div id=search-space><input autocomplete=off id=search-bar name=search type=text aria-label=Search placeholder="Search for something..."><div id=results-container></div></div></div><script src=https://cdn.jsdelivr.net/npm/flexsearch@0.7.21/dist/flexsearch.bundle.js integrity="sha256-i3A0NZGkhsKjVMzFxv3ksk0DZh3aXqu0l49Bbh0MdjE=" crossorigin=anonymous defer></script>
+<script defer src=https://deep-thought.norwin.at/js/full-text-search.e6e2e0c213187ca0c703d6e2c7a77fcd.min.js></script><div class=singlePage><header><h1 id=page-title><a class=root-title href=https://deep-thought.norwin.at>🧠 Deep Thought 🧠</a></h1><div class=spacer></div><div id=search-icon><p>Search</p><svg tabindex="0" aria-labelledby="title desc" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title id="title">Search Icon</title><desc id="desc">Icon to open search</desc><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"/><circle cx="8" cy="8" r="7"/></g></svg></div><div class=darkmode><input class=toggle id=darkmode-toggle type=checkbox tabindex=-1>
+<label id=toggle-label-light for=darkmode-toggle tabindex=-1><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="dayIcon" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35"><title>Light Mode</title><path d="M6 17.5C6 16.672 5.328 16 4.5 16h-3C.672 16 0 16.672.0 17.5S.672 19 1.5 19h3C5.328 19 6 18.328 6 17.5zM7.5 26c-.414.0-.789.168-1.061.439l-2 2C4.168 28.711 4 29.086 4 29.5 4 30.328 4.671 31 5.5 31c.414.0.789-.168 1.06-.44l2-2C8.832 28.289 9 27.914 9 27.5 9 26.672 8.329 26 7.5 26zm10-20C18.329 6 19 5.328 19 4.5v-3C19 .672 18.329.0 17.5.0S16 .672 16 1.5v3C16 5.328 16.671 6 17.5 6zm10 3c.414.0.789-.168 1.06-.439l2-2C30.832 6.289 31 5.914 31 5.5 31 4.672 30.329 4 29.5 4c-.414.0-.789.168-1.061.44l-2 2C26.168 6.711 26 7.086 26 7.5 26 8.328 26.671 9 27.5 9zM6.439 8.561C6.711 8.832 7.086 9 7.5 9 8.328 9 9 8.328 9 7.5c0-.414-.168-.789-.439-1.061l-2-2C6.289 4.168 5.914 4 5.5 4 4.672 4 4 4.672 4 5.5c0 .414.168.789.439 1.06l2 2.001zM33.5 16h-3c-.828.0-1.5.672-1.5 1.5s.672 1.5 1.5 1.5h3c.828.0 1.5-.672 1.5-1.5S34.328 16 33.5 16zM28.561 26.439C28.289 26.168 27.914 26 27.5 26c-.828.0-1.5.672-1.5 1.5.0.414.168.789.439 1.06l2 2C28.711 30.832 29.086 31 29.5 31c.828.0 1.5-.672 1.5-1.5.0-.414-.168-.789-.439-1.061l-2-2zM17.5 29c-.829.0-1.5.672-1.5 1.5v3c0 .828.671 1.5 1.5 1.5s1.5-.672 1.5-1.5v-3C19 29.672 18.329 29 17.5 29zm0-22C11.71 7 7 11.71 7 17.5S11.71 28 17.5 28 28 23.29 28 17.5 23.29 7 17.5 7zm0 18c-4.136.0-7.5-3.364-7.5-7.5s3.364-7.5 7.5-7.5 7.5 3.364 7.5 7.5S21.636 25 17.5 25z"/></svg></label><label id=toggle-label-dark for=darkmode-toggle tabindex=-1><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="nightIcon" viewBox="0 0 100 100" style="enable-background='new 0 0 100 100'"><title>Dark Mode</title><path d="M96.76 66.458c-.853-.852-2.15-1.064-3.23-.534-6.063 2.991-12.858 4.571-19.655 4.571C62.022 70.495 50.88 65.88 42.5 57.5 29.043 44.043 25.658 23.536 34.076 6.47c.532-1.08.318-2.379-.534-3.23-.851-.852-2.15-1.064-3.23-.534-4.918 2.427-9.375 5.619-13.246 9.491-9.447 9.447-14.65 22.008-14.65 35.369.0 13.36 5.203 25.921 14.65 35.368s22.008 14.65 35.368 14.65c13.361.0 25.921-5.203 35.369-14.65 3.872-3.871 7.064-8.328 9.491-13.246C97.826 68.608 97.611 67.309 96.76 66.458z"/></svg></label></div></header><article><p class=meta>Last updated
+Jun 16, 2023</p><ul class=tags></ul><aside class=mainTOC><details><summary>Table of Contents</summary><nav id=TableOfContents><ol><li><a href=#what-is-graphql>What is GraphQL?</a></li><li><a href=#data-model>Data model</a></li><li><a href=#query-language>Query language</a></li><li><a href=#why>Why?</a></li><li><a href=#add-graphql-to-an-aspnet-core-web-api>Add GraphQL to an ASP.NET Core Web API</a></li><li><a href=#add-a-query>Add a query</a></li><li><a href=#register-with-dependency-injection>Register with dependency injection</a></li><li><a href=#run-and-verify>Run and verify</a></li><li><a href=#add-connection-to-database>Add connection to database</a></li><li><a href=#verify-again>Verify again</a></li><li><a href=#get-element-by-id>Get element by ID</a></li><li><a href=#add-graphql-to-a-blazor-wasm-client>Add GraphQL to a Blazor WASM Client</a></li><li><a href=#generate-client>Generate client</a></li><li><a href=#customize-namespace>Customize namespace</a></li><li><a href=#write-query-definition>Write query definition</a></li><li><a href=#build-project>Build project</a></li><li><a href=#register-client-with-dependency-injection>Register client with dependency injection</a></li><li><a href=#query-data>Query data</a></li><li><a href=#mutations>Mutations</a></li><li><a href=#server-implementation>Server Implementation</a></li><li><a href=#registration>Registration</a></li><li><a href=#update-client>Update Client</a></li><li><a href=#add-definition-for-mutation>Add Definition for Mutation</a></li><li><a href=#build-again>Build again</a></li><li><a href=#use-client-to-modify-data>Use client to modify data</a></li><li><a href=#subscriptions>Subscriptions</a></li><li><a href=#server-implementation-1>Server Implementation</a></li><li><a href=#send-subscription-message-in-mutation>Send subscription message in Mutation</a></li><li><a href=#registration-1>Registration</a></li><li><a href=#test-subscriptions>Test subscriptions</a></li><li><a href=#client-implementation>Client implementation</a></li><li><a href=#add-subscription-definition>Add subscription definition</a></li><li><a href=#configuration>Configuration</a></li><li><a href=#use-subscription-in-client>Use subscription in client</a></li></ol></nav></details></aside><a href=#graphql><h1 id=graphql><span class=hanchor arialabel=Anchor># </span>GraphQL</h1></a><a href=#what-is-graphql><h2 id=what-is-graphql><span class=hanchor arialabel=Anchor># </span>What is GraphQL?</h2></a><ul><li>Yet another communication standard</li><li>Mainly for client ⇔ server</li><li>GraphQL is typically served over HTTP<ul><li>Contrary to REST we use a single endpoint</li></ul></li><li>GraphQL services typically respond using JSON (yet not required by the spec)</li></ul><hr><a href=#data-model><h2 id=data-model><span class=hanchor arialabel=Anchor># </span>Data model</h2></a><p>With GraphQL you think of data as a graph of nodes.</p><div class=mermaid>flowchart LR
+Reward --> ID
+Reward --> Title
+Reward --> Description
+Reward --> Savings
+Savings --> S0["Saving[0]"]
+Savings --> S1["Saving[1]"]
+S0 --> A0[Amount]
+S1 --> A1[Amount]</div><hr><a href=#query-language><h2 id=query-language><span class=hanchor arialabel=Anchor># </span>Query language</h2></a><p>GraphQL has its own language to query data</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-graphql data-lang=graphql><span style=display:flex><span>{
+</span></span><span style=display:flex><span>  rewards {
+</span></span><span style=display:flex><span>    title
+</span></span><span style=display:flex><span>  }
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-graphql data-lang=graphql><span style=display:flex><span>{
+</span></span><span style=display:flex><span>  rewards(id: <span style=color:#50fa7b>1</span>) {
+</span></span><span style=display:flex><span>    title,
+</span></span><span style=display:flex><span>    savings {
+</span></span><span style=display:flex><span>      amount
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>  }
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div><hr><a href=#why><h2 id=why><span class=hanchor arialabel=Anchor># </span>Why?</h2></a><ul><li>GraphQL gives power to the client.</li><li>The client can specify what they want exactly for a specific use-case.<ul><li>The server needs to be implemented in a way that supports the queries.</li></ul></li><li>This leads to very targeted queries fetching only the information that is needed.</li></ul><hr><a href=#add-graphql-to-an-aspnet-core-web-api><h2 id=add-graphql-to-an-aspnet-core-web-api><span class=hanchor arialabel=Anchor># </span>Add GraphQL to an ASP.NET Core Web API</h2></a><p>Using HotChocolate<sup id=fnref:1><a href=#fn:1 class=footnote-ref role=doc-noteref>1</a></sup></p><p>NuGet:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-powershell data-lang=powershell><span style=display:flex><span><span style=color:#8be9fd;font-style:italic>Install-Package</span> HotChocolate.AspNetCore
+</span></span><span style=display:flex><span><span style=color:#8be9fd;font-style:italic>Install-Package</span> HotChocolate.Data
+</span></span><span style=display:flex><span><span style=color:#8be9fd;font-style:italic>Install-Package</span> GraphQL.Server.Transports.AspNetCore
+</span></span></code></pre></div><hr><a href=#add-a-query><h2 id=add-a-query><span class=hanchor arialabel=Anchor># </span>Add a query</h2></a><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-csharp data-lang=csharp><span style=display:flex><span><span style=color:#ff79c6>public</span> <span style=color:#ff79c6>class</span> <span style=color:#50fa7b>Query</span>  
+</span></span><span style=display:flex><span>{  
+</span></span><span style=display:flex><span>    <span style=color:#ff79c6>public</span> IQueryable&lt;Reward&gt; GetRewards =&gt;  
+</span></span><span style=display:flex><span>		<span style=color:#ff79c6>new</span> List&lt;Reward&gt;().AsQueryable();    
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div><p>The methods can return any data. We just return an empty list here to get started.</p><hr><a href=#register-with-dependency-injection><h2 id=register-with-dependency-injection><span class=hanchor arialabel=Anchor># </span>Register with dependency injection</h2></a><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-csharp data-lang=csharp><span style=display:flex><span><span style=color:#6272a4>// Program.cs</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#6272a4>// Type Query points to Query class (previous slide)</span>
+</span></span><span style=display:flex><span>builder.Services.AddGraphQLServer().AddQueryType&lt;Query&gt;()
+</span></span><span style=display:flex><span><span style=color:#6272a4>// ...</span>
+</span></span><span style=display:flex><span>app.MapGraphQL(path: <span style=color:#f1fa8c>&#34;/graphql&#34;</span>);
+</span></span></code></pre></div><hr><a href=#run-and-verify><h2 id=run-and-verify><span class=hanchor arialabel=Anchor># </span>Run and verify</h2></a><p>Run application and go to route /graphql in the browser.</p><p>Create a new document and try out the following query.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-graphql data-lang=graphql><span style=display:flex><span><span style=color:#8be9fd;font-style:italic>query</span> <span style=color:#50fa7b>MyQuery</span> {
+</span></span><span style=display:flex><span>  getRewards {
+</span></span><span style=display:flex><span>    title
+</span></span><span style=display:flex><span>  }
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div><p>Should yield result:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-json data-lang=json><span style=display:flex><span>{
+</span></span><span style=display:flex><span>  <span style=color:#ff79c6>&#34;data&#34;</span>: {
+</span></span><span style=display:flex><span>    <span style=color:#ff79c6>&#34;getRewards&#34;</span>: []
+</span></span><span style=display:flex><span>  }
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div><hr><a href=#add-connection-to-database><h2 id=add-connection-to-database><span class=hanchor arialabel=Anchor># </span>Add connection to database</h2></a><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-csharp data-lang=csharp><span style=display:flex><span><span style=color:#ff79c6>public</span> <span style=color:#ff79c6>class</span> <span style=color:#50fa7b>Query</span>  
+</span></span><span style=display:flex><span>{  
+</span></span><span style=display:flex><span><span style=color:#50fa7b>    [UseProjection]</span>  
+</span></span><span style=display:flex><span><span style=color:#50fa7b>    [UseFiltering]</span>  
+</span></span><span style=display:flex><span><span style=color:#50fa7b>    [UseSorting]</span>  
+</span></span><span style=display:flex><span>    <span style=color:#ff79c6>public</span> IQueryable&lt;Reward&gt; GetRewards(
+</span></span><span style=display:flex><span><span style=color:#50fa7b>	    [Service]</span> RewardDbContext context) =&gt;  
+</span></span><span style=display:flex><span>	        context.Rewards;  
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-csharp data-lang=csharp><span style=display:flex><span><span style=color:#6272a4>// Program.cs</span>
+</span></span><span style=display:flex><span>builder.Services.AddGraphQLServer().AddQueryType&lt;Query&gt;()
+</span></span><span style=display:flex><span>  .AddProjections().AddFiltering().AddSorting();
+</span></span></code></pre></div><hr><a href=#verify-again><h2 id=verify-again><span class=hanchor arialabel=Anchor># </span>Verify again</h2></a><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-graphql data-lang=graphql><span style=display:flex><span><span style=color:#8be9fd;font-style:italic>query</span> <span style=color:#50fa7b>GetRewards</span> {
+</span></span><span style=display:flex><span>  rewards {
+</span></span><span style=display:flex><span>    title
+</span></span><span style=display:flex><span>  }
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div><p>returns</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-json data-lang=json><span style=display:flex><span>{
+</span></span><span style=display:flex><span>  <span style=color:#ff79c6>&#34;data&#34;</span>: {
+</span></span><span style=display:flex><span>    <span style=color:#ff79c6>&#34;rewards&#34;</span>: [
+</span></span><span style=display:flex><span>      {
+</span></span><span style=display:flex><span>        <span style=color:#ff79c6>&#34;title&#34;</span>: <span style=color:#f1fa8c>&#34;X-Jam&#34;</span>
+</span></span><span style=display:flex><span>      }
+</span></span><span style=display:flex><span>    ]
+</span></span><span style=display:flex><span>  }
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div><hr><a href=#get-element-by-id><h2 id=get-element-by-id><span class=hanchor arialabel=Anchor># </span>Get element by ID</h2></a><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-csharp data-lang=csharp><span style=display:flex><span><span style=color:#ff79c6>public</span> <span style=color:#ff79c6>class</span> <span style=color:#50fa7b>Query</span>  
+</span></span><span style=display:flex><span>{    
+</span></span><span style=display:flex><span><span style=color:#50fa7b>  [UseFirstOrDefault]</span>  
+</span></span><span style=display:flex><span><span style=color:#50fa7b>  [UseProjection]</span>  
+</span></span><span style=display:flex><span>  <span style=color:#ff79c6>public</span> IQueryable&lt;Reward?&gt; GetReward(
+</span></span><span style=display:flex><span><span style=color:#50fa7b>    [Service]</span> RewardDbContext context, 
+</span></span><span style=display:flex><span>    <span style=color:#8be9fd>int</span> id) =&gt;  
+</span></span><span style=display:flex><span>      context.Rewards.Where(r =&gt; r.Id == id); 
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-graphql data-lang=graphql><span style=display:flex><span><span style=color:#8be9fd;font-style:italic>query</span> <span style=color:#50fa7b>GetReward</span> {
+</span></span><span style=display:flex><span>  reward(id: <span style=color:#50fa7b>1</span>) {
+</span></span><span style=display:flex><span>    title
+</span></span><span style=display:flex><span>  }
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-json data-lang=json><span style=display:flex><span>{
+</span></span><span style=display:flex><span>  <span style=color:#ff79c6>&#34;data&#34;</span>: {
+</span></span><span style=display:flex><span>    <span style=color:#ff79c6>&#34;reward&#34;</span>: {
+</span></span><span style=display:flex><span>      <span style=color:#ff79c6>&#34;title&#34;</span>: <span style=color:#f1fa8c>&#34;X-Jam&#34;</span>
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>  }
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div><hr><a href=#add-graphql-to-a-blazor-wasm-client><h2 id=add-graphql-to-a-blazor-wasm-client><span class=hanchor arialabel=Anchor># </span>Add GraphQL to a Blazor WASM Client</h2></a><p>Using StrawberryShake<sup id=fnref:2><a href=#fn:2 class=footnote-ref role=doc-noteref>2</a></sup></p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-powershell data-lang=powershell><span style=display:flex><span><span style=color:#6272a4># in root folder of solution</span>
+</span></span><span style=display:flex><span>dotnet new <span style=color:#8be9fd;font-style:italic>tool-manifest</span>
+</span></span><span style=display:flex><span>dotnet tool install StrawberryShake.Tools
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#6272a4># in Blazor Client project</span>
+</span></span><span style=display:flex><span><span style=color:#8be9fd;font-style:italic>Install-Package</span> StrawberryShake.Blazor
+</span></span></code></pre></div><hr><a href=#generate-client><h2 id=generate-client><span class=hanchor arialabel=Anchor># </span>Generate client</h2></a><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-powershell data-lang=powershell><span style=display:flex><span><span style=color:#6272a4># server needs to run for this command</span>
+</span></span><span style=display:flex><span><span style=color:#6272a4># run command in root folder of solution</span>
+</span></span><span style=display:flex><span><span style=color:#6272a4># use whatever url your server is serving from</span>
+</span></span><span style=display:flex><span>dotnet graphql init https://localhost:<span style=color:#bd93f9>7232</span>/graphql/ `
+</span></span><span style=display:flex><span>-n RewardClient ` <span style=color:#6272a4># give your generated client a name</span>
+</span></span><span style=display:flex><span>-p SavingsPlanner/Client <span style=color:#6272a4># point to the client project</span>
+</span></span></code></pre></div><hr><a href=#customize-namespace><h2 id=customize-namespace><span class=hanchor arialabel=Anchor># </span>Customize namespace</h2></a><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-json data-lang=json><span style=display:flex><span><span style=color:#6272a4>// .graphqlrc.json
+</span></span></span><span style=display:flex><span><span style=color:#6272a4></span>{  
+</span></span><span style=display:flex><span>  <span style=color:#ff79c6>&#34;schema&#34;</span>: <span style=color:#f1fa8c>&#34;schema.graphql&#34;</span>,  
+</span></span><span style=display:flex><span>  <span style=color:#ff79c6>&#34;documents&#34;</span>: <span style=color:#f1fa8c>&#34;**/*.graphql&#34;</span>,  
+</span></span><span style=display:flex><span>  <span style=color:#ff79c6>&#34;extensions&#34;</span>: {  
+</span></span><span style=display:flex><span>    <span style=color:#ff79c6>&#34;strawberryShake&#34;</span>: {  
+</span></span><span style=display:flex><span>      <span style=color:#ff79c6>&#34;name&#34;</span>: <span style=color:#f1fa8c>&#34;RewardClient&#34;</span>,  
+</span></span><span style=display:flex><span>      <span style=color:#ff79c6>&#34;namespace&#34;</span>: <span style=color:#f1fa8c>&#34;SavingsPlanner.Client.GraphQL&#34;</span>,  
+</span></span><span style=display:flex><span>      <span style=color:#ff79c6>&#34;url&#34;</span>: <span style=color:#f1fa8c>&#34;https://localhost:7232/graphql/&#34;</span>,  
+</span></span><span style=display:flex><span>      <span style=color:#6272a4>//...
+</span></span></span><span style=display:flex><span><span style=color:#6272a4></span>    }  
+</span></span><span style=display:flex><span>  }  
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div><hr><a href=#write-query-definition><h2 id=write-query-definition><span class=hanchor arialabel=Anchor># </span>Write query definition</h2></a><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-graphql data-lang=graphql><span style=display:flex><span><span style=color:#6272a4># GetRewards.graphql</span>
+</span></span><span style=display:flex><span><span style=color:#8be9fd;font-style:italic>query</span> <span style=color:#50fa7b>GetRewards</span> {  
+</span></span><span style=display:flex><span>  rewards {  
+</span></span><span style=display:flex><span>    title,  
+</span></span><span style=display:flex><span>    description,  
+</span></span><span style=display:flex><span>    targetAmount,  
+</span></span><span style=display:flex><span>    id  
+</span></span><span style=display:flex><span>  }  
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div><hr><a href=#build-project><h2 id=build-project><span class=hanchor arialabel=Anchor># </span>Build project</h2></a><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-powershell data-lang=powershell><span style=display:flex><span>dotnet build
+</span></span></code></pre></div><hr><a href=#register-client-with-dependency-injection><h2 id=register-client-with-dependency-injection><span class=hanchor arialabel=Anchor># </span>Register client with dependency injection</h2></a><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-csharp data-lang=csharp><span style=display:flex><span><span style=color:#6272a4>// Program.cs</span>
+</span></span><span style=display:flex><span>builder.Services  
+</span></span><span style=display:flex><span>    .AddRewardClient()  
+</span></span><span style=display:flex><span>    .ConfigureHttpClient(client =&gt; 
+</span></span><span style=display:flex><span>      client.BaseAddress = <span style=color:#ff79c6>new</span> Uri(
+</span></span><span style=display:flex><span>        builder.HostEnvironment.BaseAddress + <span style=color:#f1fa8c>&#34;graphql&#34;</span>));
+</span></span></code></pre></div><hr><a href=#query-data><h2 id=query-data><span class=hanchor arialabel=Anchor># </span>Query data</h2></a><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-csharp data-lang=csharp><span style=display:flex><span>@inject RewardClient RewardClient
+</span></span><span style=display:flex><span><span style=color:#6272a4>// ...</span>
+</span></span><span style=display:flex><span><span style=color:#ff79c6>await</span> RewardClient.GetRewards.ExecuteAsync();
+</span></span></code></pre></div><hr><a href=#mutations><h2 id=mutations><span class=hanchor arialabel=Anchor># </span>Mutations</h2></a><p>GraphQL Mutations let you modify data.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-graphql data-lang=graphql><span style=display:flex><span><span style=color:#8be9fd;font-style:italic>mutation</span> <span style=color:#50fa7b>MyMutation</span> {
+</span></span><span style=display:flex><span>  addReward(reward: {
+</span></span><span style=display:flex><span>    <span style=color:#50fa7b>title</span>: <span style=color:#f1fa8c>&#34;Apple&#34;</span>,
+</span></span><span style=display:flex><span>    <span style=color:#50fa7b>description</span>: <span style=color:#f1fa8c>&#34;fruit&#34;</span>,
+</span></span><span style=display:flex><span>    <span style=color:#50fa7b>targetAmount</span>: <span style=color:#50fa7b>1337</span>,
+</span></span><span style=display:flex><span>    savingStart: <span style=color:#f1fa8c>&#34;2023-03-01T00:00:00.000+01:00&#34;</span>,
+</span></span><span style=display:flex><span>    <span style=color:#50fa7b>savingEnd</span>: <span style=color:#f1fa8c>&#34;2023-04-01T00:00:00.000+01:00&#34;</span>,
+</span></span><span style=display:flex><span>  }) {
+</span></span><span style=display:flex><span>    <span style=color:#50fa7b>title</span>,
+</span></span><span style=display:flex><span>    id
+</span></span><span style=display:flex><span>  }
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div><p>You send the data and have control of what you get back.</p><hr><a href=#server-implementation><h2 id=server-implementation><span class=hanchor arialabel=Anchor># </span>Server Implementation</h2></a><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-csharp data-lang=csharp><span style=display:flex><span><span style=color:#ff79c6>public</span> <span style=color:#ff79c6>class</span> <span style=color:#50fa7b>Mutation</span>  
+</span></span><span style=display:flex><span>{  
+</span></span><span style=display:flex><span>    <span style=color:#ff79c6>public</span> <span style=color:#ff79c6>async</span> Task&lt;RewardListItemDto&gt; AddReward(
+</span></span><span style=display:flex><span><span style=color:#50fa7b>      [Service]</span> IRepository&lt;Reward&gt; rewardRepository, 
+</span></span><span style=display:flex><span>      AddRewardDto reward)  
+</span></span><span style=display:flex><span>    {  
+</span></span><span style=display:flex><span>        <span style=color:#ff79c6>return</span> <span style=color:#ff79c6>await</span> rewardRepository
+</span></span><span style=display:flex><span>          .AddAsync&lt;AddRewardDto, RewardListItemDto&gt;(reward);  
+</span></span><span style=display:flex><span>    }  
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div><p>It is recommended to create specific types for adding items (e.g. without ID property).</p><hr><a href=#registration><h2 id=registration><span class=hanchor arialabel=Anchor># </span>Registration</h2></a><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-csharp data-lang=csharp><span style=display:flex><span><span style=color:#6272a4>//Program.cs</span>
+</span></span><span style=display:flex><span>builder.Services  
+</span></span><span style=display:flex><span>    .AddGraphQLServer()
+</span></span><span style=display:flex><span>    <span style=color:#6272a4>// ... your queries</span>
+</span></span><span style=display:flex><span>    .AddMutationType&lt;Mutation&gt;();
+</span></span></code></pre></div><hr><a href=#update-client><h2 id=update-client><span class=hanchor arialabel=Anchor># </span>Update Client</h2></a><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-powershell data-lang=powershell><span style=display:flex><span><span style=color:#6272a4># run from Client directory</span>
+</span></span><span style=display:flex><span><span style=color:#6272a4># server needs to run</span>
+</span></span><span style=display:flex><span><span style=color:#6272a4># correct server address needs to be specified in .graphqlrc</span>
+</span></span><span style=display:flex><span>dotnet graphql update
+</span></span></code></pre></div><hr><a href=#add-definition-for-mutation><h2 id=add-definition-for-mutation><span class=hanchor arialabel=Anchor># </span>Add Definition for Mutation</h2></a><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-graphql data-lang=graphql><span style=display:flex><span><span style=color:#6272a4># AddReward.graphql</span>
+</span></span><span style=display:flex><span><span style=color:#8be9fd;font-style:italic>mutation</span> <span style=color:#50fa7b>AddReward</span>(<span style=color:#8be9fd;font-style:italic>$rewardInput</span>: <span style=color:#50fa7b>AddRewardDtoInput</span>!) {  
+</span></span><span style=display:flex><span>    addReward(reward: <span style=color:#8be9fd;font-style:italic>$rewardInput</span>) {
+</span></span><span style=display:flex><span>        <span style=color:#50fa7b>id</span>  
+</span></span><span style=display:flex><span>    }  
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div><hr><a href=#build-again><h2 id=build-again><span class=hanchor arialabel=Anchor># </span>Build again</h2></a><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-powershell data-lang=powershell><span style=display:flex><span>dotnet build
+</span></span></code></pre></div><hr><a href=#use-client-to-modify-data><h2 id=use-client-to-modify-data><span class=hanchor arialabel=Anchor># </span>Use client to modify data</h2></a><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-csharp data-lang=csharp><span style=display:flex><span><span style=color:#6272a4>// NewReward.razor</span>
+</span></span><span style=display:flex><span>@inject RewardClient RewardClient
+</span></span><span style=display:flex><span><span style=color:#6272a4>// ...</span>
+</span></span><span style=display:flex><span><span style=color:#ff79c6>await</span> RewardClient.AddReward.ExecuteAsync(
+</span></span><span style=display:flex><span>  <span style=color:#ff79c6>new</span> AddRewardDtoInput()  
+</span></span><span style=display:flex><span>  {  
+</span></span><span style=display:flex><span>    Title = _title,  
+</span></span><span style=display:flex><span>    TargetAmount = _targetAmount,  
+</span></span><span style=display:flex><span>    SavingStart = _startDate.Value,  
+</span></span><span style=display:flex><span>    SavingEnd = _endDate.Value,  
+</span></span><span style=display:flex><span>    Description = _description  
+</span></span><span style=display:flex><span>  });
+</span></span></code></pre></div><hr><a href=#subscriptions><h2 id=subscriptions><span class=hanchor arialabel=Anchor># </span>Subscriptions</h2></a><p>GraphQL offers an easy way to subscribe to events.<br>The Server can notify the client of changes via a websocket connection.</p><div class=mermaid>sequenceDiagram
+Client->>+Server: Subscribe()
+Note right of Server: Subscription is initiated via HTTP
+Server-->>-Client: ack
+Server->>Client: Update()
+Server->>Client: Update()
+Note right of Server: Updates are sent via WebSocket</div><hr><a href=#server-implementation-1><h2 id=server-implementation-1><span class=hanchor arialabel=Anchor># </span>Server Implementation</h2></a><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-csharp data-lang=csharp><span style=display:flex><span><span style=color:#ff79c6>public</span> <span style=color:#ff79c6>class</span> <span style=color:#50fa7b>Subscription</span>  
+</span></span><span style=display:flex><span>{  
+</span></span><span style=display:flex><span><span style=color:#50fa7b>  [Subscribe]</span>  
+</span></span><span style=display:flex><span>  <span style=color:#ff79c6>public</span> RewardListItemDto RewardAdded(
+</span></span><span style=display:flex><span><span style=color:#50fa7b>    [EventMessage]</span> RewardListItemDto reward) 
+</span></span><span style=display:flex><span>    =&gt; reward;  
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div><hr><a href=#send-subscription-message-in-mutation><h2 id=send-subscription-message-in-mutation><span class=hanchor arialabel=Anchor># </span>Send subscription message in Mutation</h2></a><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-csharp data-lang=csharp><span style=display:flex><span><span style=color:#ff79c6>public</span> <span style=color:#ff79c6>async</span> Task&lt;RewardListItemDto&gt; AddReward(  
+</span></span><span style=display:flex><span><span style=color:#50fa7b>    [Service]</span> IRepository&lt;Reward&gt; rewardRepository,   
+</span></span><span style=display:flex><span><span style=color:#50fa7b>    [Service]</span> ITopicEventSender sender,  
+</span></span><span style=display:flex><span>    AddRewardDto reward)    
+</span></span><span style=display:flex><span>{    
+</span></span><span style=display:flex><span>    <span style=color:#8be9fd>var</span> addedReward = <span style=color:#ff79c6>await</span> rewardRepository  
+</span></span><span style=display:flex><span>        .AddAsync&lt;AddRewardDto, RewardListItemDto&gt;(reward);  
+</span></span><span style=display:flex><span>    <span style=color:#ff79c6>await</span> sender.SendAsync(
+</span></span><span style=display:flex><span>      nameof(Subscription.RewardAdded), addedReward);  
+</span></span><span style=display:flex><span>    <span style=color:#ff79c6>return</span> addedReward;  
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div><hr><a href=#registration-1><h2 id=registration-1><span class=hanchor arialabel=Anchor># </span>Registration</h2></a><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-csharp data-lang=csharp><span style=display:flex><span><span style=color:#6272a4>// Program.cs</span>
+</span></span><span style=display:flex><span>builder.Services  
+</span></span><span style=display:flex><span>  .AddGraphQLServer()  
+</span></span><span style=display:flex><span>  <span style=color:#6272a4>// ... queries and mutations</span>
+</span></span><span style=display:flex><span>  .AddInMemorySubscriptions()
+</span></span><span style=display:flex><span>  .AddSubscriptionType&lt;Subscription&gt;();
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#6272a4>// ...</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>app.UseRouting();
+</span></span><span style=display:flex><span>app.UseWebSockets(); <span style=color:#6272a4>// add this line below UseRouting</span>
+</span></span></code></pre></div><hr><a href=#test-subscriptions><h2 id=test-subscriptions><span class=hanchor arialabel=Anchor># </span>Test subscriptions</h2></a><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-graphql data-lang=graphql><span style=display:flex><span><span style=color:#8be9fd;font-style:italic>subscription</span> <span style=color:#50fa7b>MySubscription</span> {
+</span></span><span style=display:flex><span>  rewardAdded {
+</span></span><span style=display:flex><span>    id,
+</span></span><span style=display:flex><span>    title
+</span></span><span style=display:flex><span>  }
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div><hr><a href=#client-implementation><h2 id=client-implementation><span class=hanchor arialabel=Anchor># </span>Client implementation</h2></a><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-powershell data-lang=powershell><span style=display:flex><span><span style=color:#6272a4># run from Client directory</span>
+</span></span><span style=display:flex><span><span style=color:#6272a4># server needs to run</span>
+</span></span><span style=display:flex><span><span style=color:#6272a4># correct server address needs to be specified in .graphqlrc</span>
+</span></span><span style=display:flex><span>dotnet graphql update
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#6272a4># Add NuGet Package</span>
+</span></span><span style=display:flex><span><span style=color:#8be9fd;font-style:italic>Install-Package</span> StrawberryShake.Transport.WebSockets
+</span></span></code></pre></div><hr><a href=#add-subscription-definition><h2 id=add-subscription-definition><span class=hanchor arialabel=Anchor># </span>Add subscription definition</h2></a><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-graphql data-lang=graphql><span style=display:flex><span><span style=color:#6272a4># SubscribeRewardAdded.graphql</span>
+</span></span><span style=display:flex><span><span style=color:#8be9fd;font-style:italic>subscription</span> <span style=color:#50fa7b>SubscribeRewardAdded</span> {  
+</span></span><span style=display:flex><span>    rewardAdded {  
+</span></span><span style=display:flex><span>        id,  
+</span></span><span style=display:flex><span>        title,  
+</span></span><span style=display:flex><span>        description,  
+</span></span><span style=display:flex><span>        targetAmount,  
+</span></span><span style=display:flex><span>    }  
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div><p>Build project to regenerate client afterwards.</p><hr><a href=#configuration><h2 id=configuration><span class=hanchor arialabel=Anchor># </span>Configuration</h2></a><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-csharp data-lang=csharp><span style=display:flex><span><span style=color:#6272a4>// Program.cs</span>
+</span></span><span style=display:flex><span><span style=color:#8be9fd>var</span> graphQlUri = <span style=color:#ff79c6>new</span> Uri(
+</span></span><span style=display:flex><span>  builder.HostEnvironment.BaseAddress + <span style=color:#f1fa8c>&#34;graphql&#34;</span>);  
+</span></span><span style=display:flex><span><span style=color:#8be9fd>var</span> graphQlWebSocketUri = <span style=color:#ff79c6>new</span> UriBuilder(graphQlUri)  
+</span></span><span style=display:flex><span>{  
+</span></span><span style=display:flex><span>    Scheme = Uri.UriSchemeWss  
+</span></span><span style=display:flex><span>}.Uri;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>builder.Services.AddRewardClient()  
+</span></span><span style=display:flex><span>  .ConfigureHttpClient(client =&gt; 
+</span></span><span style=display:flex><span>    client.BaseAddress = graphQlUri)  
+</span></span><span style=display:flex><span>  .ConfigureWebSocketClient(client =&gt; 
+</span></span><span style=display:flex><span>    client.Uri = graphQlWebSocketUri);
+</span></span></code></pre></div><hr><a href=#use-subscription-in-client><h2 id=use-subscription-in-client><span class=hanchor arialabel=Anchor># </span>Use subscription in client</h2></a><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-csharp data-lang=csharp><span style=display:flex><span><span style=color:#6272a4>// Rewards.razor</span>
+</span></span><span style=display:flex><span>@implements IDisposable
+</span></span><span style=display:flex><span><span style=color:#6272a4>// ...</span>
+</span></span><span style=display:flex><span><span style=color:#ff79c6>private</span> IDisposable? rewardAddedSubscription;  
+</span></span><span style=display:flex><span>  
+</span></span><span style=display:flex><span><span style=color:#ff79c6>protected</span> <span style=color:#ff79c6>override</span> <span style=color:#ff79c6>async</span> Task OnInitializedAsync()  
+</span></span><span style=display:flex><span>{  
+</span></span><span style=display:flex><span>  <span style=color:#ff79c6>await</span> LoadDataAsync();  
+</span></span><span style=display:flex><span>  rewardAddedSubscription = RewardClient  
+</span></span><span style=display:flex><span>    .SubscribeRewardAdded  
+</span></span><span style=display:flex><span>    .Watch()  
+</span></span><span style=display:flex><span>      .Subscribe(message =&gt;  
+</span></span><span style=display:flex><span>      {  
+</span></span><span style=display:flex><span>        <span style=color:#8be9fd>var</span> dto = <span style=color:#ff79c6>new</span> RewardListItemDto(
+</span></span><span style=display:flex><span>          message.Data.RewardAdded.Id,  
+</span></span><span style=display:flex><span>          message.Data.RewardAdded.Title,  
+</span></span><span style=display:flex><span>          message.Data.RewardAdded.TargetAmount,  
+</span></span><span style=display:flex><span>          message.Data.RewardAdded.Description);  
+</span></span><span style=display:flex><span>	    rewards.Add(dto);  
+</span></span><span style=display:flex><span>		StateHasChanged();  
+</span></span><span style=display:flex><span>	  });  
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#ff79c6>public</span> <span style=color:#ff79c6>void</span> Dispose()  
+</span></span><span style=display:flex><span>{  
+</span></span><span style=display:flex><span>    bookAddedSubscription?.Dispose();  
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div><div class=footnotes role=doc-endnotes><hr><ol><li id=fn:1><p><a href=https://chillicream.com/docs/hotchocolate/v13/get-started-with-graphql-in-net-core rel=noopener>Get started with GraphQL in .NET Core</a>&#160;<a href=#fnref:1 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p></li><li id=fn:2><p><a href=https://chillicream.com/docs/strawberryshake/v13/get-started rel=noopener>Get started with Strawberry Shake and Blazor</a>&#160;<a href=#fnref:2 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p></li></ol></div></article><hr><div class=page-end id=footer><div class=backlinks-container><h3>Backlinks</h3><ul class=backlinks><li>No backlinks found</li></ul></div><div><script src=https://cdn.jsdelivr.net/npm/d3@6.7.0/dist/d3.min.js integrity="sha256-+7jaYCp29O1JusNWHaYtgUn6EhuP0VaFuswhNV06MyI=" crossorigin=anonymous></script><h3>Interactive Graph</h3><div id=graph-container></div><style>:root{--g-node:var(--secondary);--g-node-active:var(--primary);--g-node-inactive:var(--visited);--g-link:var(--outlinegray);--g-link-active:#5a7282}</style><script src=https://deep-thought.norwin.at/js/graph.6579af7b10c818dbd2ca038702db0224.js></script></div></div><div id=contact_buttons><footer><p>Made by Norbert Winkler using <a href=https://github.com/jackyzha0/quartz>Quartz</a>, © 2023</p><ul><li><a href=https://deep-thought.norwin.at>Home</a></li><li><a href=https://twitter.com/n0rwin>Twitter</a></li><li><a href=https://github.com/n0rwin>GitHub</a></li></ul></footer></div></div></body></html>
