@@ -1,0 +1,1215 @@
+<!doctype html><html lang=en><head><meta charset=utf-8><meta name=description content="Exercise 19 - Array Methods // -- ------------------------------------------------------- -- // Weapons // -- ------------------------------------------------------- -- function createAvengerBoltCannon() { return { name: &#34;Avenger Bolt Cannon&#34;, fireArc: [&#34;FRONT&#34;], firePower: [3, 7, 0], damage: 4, ammonition: 160, specials: [ { keyword: &#34;EXTRA_DAMAGE&#34;, value: 6, }, ], }; } function createHeavyBolterPortTurret() { return { name: &#34;Heavy Bolter Turret&#34;, fireArc: [&#34;LEFT_SIDE&#34;], firePower: [6, 2, 0], damage: 5, ammonition: 160, specials: [], }; } function createHellstrikeMissleLauncher() { return { name: &#34;Hellstrike Missle Launcher&#34;, fireArc: [&#34;FRONT&#34;], firePower: [2, 2, 2], damage: 3, ammonition: 3, specials: [ { keyword: &#34;GROUND_ATTACK&#34;, value: 0, }, { keyword: &#34;EXTRA_DAMAGE&#34;, value: 6, }, ], }; } function createQuadLascannon() { return { name: &#34;Quad Lascannon&#34;, fireArc: [&#34;FRONT&#34;], firePower: [0, 4, 2], damage: 2, ammonition: 160, specials: [ { keyword: &#34;EXTRA_DAMAGE&#34;, value: 6, }, ], }; } function createTwinHeavyBolters() { return { name: &#34;Twin Heavy Bolters&#34;, fireArc: [&#34;FRONT&#34;], firePower: [3, 1, 0], damage: 5, ammonition: 160, specials: [], }; } function createDualFragMisslePods() { return { name: &#34;Dual Frag Missle Pods&#34;, fireArc: [&#34;FRONT&#34;], firePower: [3, 3, 1], damage: 5, ammonition: 160, specials: [], }; } function createRotaryFragMissleLauncher() { return { name: &#34;Rotary Frag Missle Launcher&#34;, fireArc: [&#34;FRONT&#34;], firePower: [2, 2, 1], damage: 5, ammonition: 160, specials: [], }; } function createTurboLaserDestructor() { return { name: &#34;Turbo Laser Destructor&#34;, fireArc: [&#34;FRONT&#34;, &#34;UP&#34;], firePower: [2, 2, 3], damage: 2, ammonition: 160, specials: [ { keyword: &#34;EXTRA_DAMAGE&#34;, value: 4, }, ], }; } function createTwinLascannon() { return { name: &#34;Twin Lascannon&#34;, fireArc: [&#34;FRONT&#34;], firePower: [0, 2, 1], damage: 2, ammonition: 160, specials: [ { keyword: &#34;EXTRA_DAMAGE&#34;, value: 6, }, ], }; } function createHeavyBolterStarboardTurret() { return { name: &#34;Heavy Bolter Turret&#34;, fireArc: [&#34;RIGHT_SIDE&#34;, &#34;FRONT&#34;], firePower: [4, 1, 0], damage: 5, ammonition: 160, specials: [], }; } function createHeavyBolterPortWing() { return { name: &#34;Heavy Bolter Turret&#34;, fireArc: [&#34;ALL_ROUND&#34;, &#34;DOWN&#34;], firePower: [4, 1, 0], damage: 5, ammonition: 160, specials: [], }; } function createHeavyBolterStarboardWing() { return { name: &#34;Heavy Bolter Turret&#34;, fireArc: [&#34;ALL_ROUND&#34;, &#34;DOWN&#34;], firePower: [4, 1, 0], damage: 5, ammonition: 160, specials: [], }; } function createTwinBrightLances() { return { name: &#34;Bright Lance&#34;, fireArc: [&#34;FRONT&#34;], firePower: [1, 2, 2], damage: 2, ammonition: 160, specials: [ { keyword: &#34;EXTRA_DAMAGE&#34;, value: 4, }, ], }; } function createTwinScatterLaser() { return { name: &#34;Scatter Laser&#34;, fireArc: [&#34;FRONT&#34;], firePower: [6, 4, 0], damage: 4, ammonition: 160, specials: [ { keyword: &#34;AERIAL_ATTACK&#34;, value: 0, }, ], }; } function createTwinStarcannon() { return { name: &#34;Starcannon&#34;, fireArc: [&#34;FRONT&#34;], firePower: [3, 2, 1], damage: 3, ammonition: 160, specials: [ { keyword: &#34;AERIAL_ATTACK&#34;, value: 0, }, ], }; } function createShurikenCannon() { return { name: &#34;Shurikencannon&#34;, fireArc: [&#34;FRONT&#34;], firePower: [8, 4, 0], damage: 4, ammonition: 160, specials: [ { keyword: &#34;EXTRA_DAMAGE&#34;, value: 5, }, ], }; } function createNightfirePlasmaMissileArray() { return { name: &#34;Nightfire Plasma Missile Array&#34;, fireArc: [&#34;FRONT&#34;], firePower: [2, 2, 2], damage: 3, ammonition: 2, specials: [ { keyword: &#34;EXTRA_DAMAGE&#34;, value: 5, }, { keyword: &#34;AERIAL_ATTACK&#34;, value: 0, }, ], }; } function createNightfireKrakMissileArray() { return { name: &#34;Nightfire Krak Missile Array&#34;, fireArc: [&#34;FRONT&#34;], firePower: [2, 2, 2], damage: 3, ammonition: 2, specials: [ { keyword: &#34;EXTRA_DAMAGE&#34;, value: 5, }, { keyword: &#34;GROUND_ATTACK&#34;, value: 0, }, ], }; } function createTwinPulseLasers() { return { name: &#34;Pulse Laser&#34;, fireArc: [&#34;FRONT&#34;], firePower: [2, 3, 2], damage: 3, ammonition: 160, specials: [ { keyword: &#34;AERIAL_ATTACK&#34;, value: 0, }, ], }; } function createMissileArray() { return { name: &#34;Missile Array&#34;, fireArc: [&#34;FRONT&#34;], firePower: [3, 2, 0], damage: 4, ammonition: 160, specials: [], }; } function createBombRack() { return { name: &#34;Bomb Rack&#34;, fireArc: [&#34;REAR&#34;], firePower: [4, 0, 0], damage: 2, ammonition: 3, specials: [ { keyword: &#34;EXTRA_DAMAGE&#34;, value: 5, }, { keyword: &#34;GROUND_ATTACK&#34;, value: 0, }, ], }; } function createTwinLinkedShurikenCannon() { return { name: &#34;Heavy Shuriken Cannon&#34;, fireArc: [&#34;FRONT&#34;], firePower: [10, 6, 0], damage: 4, ammonition: 160, specials: [], }; } function createNoseMountedScatterLaser() { return { name: &#34;Nose mounted Scatter Laser&#34;, fireArc: [&#34;FRONT&#34;], firePower: [4, 2, 0], damage: 4, ammonition: 160, specials: [ { keyword: &#34;AERIAL_ATTACK&#34;, value: 0, }, ], }; } function createTwinLinkedPulseLasers() { return { name: &#34;Twin Linked Pulse Laser&#34;, fireArc: [&#34;FRONT&#34;], firePower: [4, 6, 2], damage: 3, ammonition: 160, specials: [ { keyword: &#34;AERIAL_ATTACK&#34;, value: 0, }, ], }; } function createTwinLinkedPulsar() { return { name: &#34;Twin Linked Pulsar&#34;, fireArc: [&#34;FRONT&#34;], firePower: [2, 4, 4], damage: 2, ammonition: 160, specials: [ { keyword: &#34;EXTRA_DAMAGE&#34;, value: 5, }, ], }; } function createHeavyDScythe() { return { name: &#34;Heavy DScythe&#34;, fireArc: [&#34;FRONT&#34;], firePower: [3, 3, 0], damage: 2, ammonition: 160, specials: [ { keyword: &#34;EXTRA_DAMAGE&#34;, value: 3, }, ], }; } function createQuadBigShootas() { return { name: &#34;Quad Big Shoota&#34;, fireArc: [&#34;FRONT&#34;], firePower: [8, 4, 0], damage: 5, ammonition: 160, specials: [], }; } function createPortShootaTurret() { return { name: &#34;Shoota Turret&#34;, fireArc: [&#34;LEFT_SIDE, UP&#34;], firePower: [2, 1, 0], damage: 5, ammonition: 160, specials: [], }; } function createStarboardShootaTurret() { return { name: &#34;Shoota Turret&#34;, fireArc: [&#34;RIGHT_SIDE, UP&#34;], firePower: [2, 1, 0], damage: 5, ammonition: 160, specials: [], }; } function createGrotBomms() { return { name: &#34;Grot Bomms&#34;, fireArc: [&#34;LEFT_SIDE&#34;, &#34;RIDE_SIDE&#34;, &#34;UP&#34;, &#34;FRONT&#34;], firePower: [0, 0, 0], damage: 2, ammonition: 160, specials: [ { keyword: &#34;AUTONOMOUS_WEAPON&#34;, value: 0, }, { keyword: &#34;EXTRA_DAMAGE&#34;, value: 4, }, ], }; } function createBigShootaTurret() { return { name: &#34;Big Shoota Turret&#34;, fireArc: [&#34;REAR&#34;, &#34;RIGHT_SIDE&#34;, &#34;LEFT_SIDE&#34;, &#34;UP&#34;], firePower: [3, 1, 0], damage: 5, ammonition: 160, specials: [ { keyword: &#34;TAIL_GUNNER&#34;, value: 0, }, { keyword: &#34;AERIAL_ATTACK&#34;, value: 0, }, ], }; } function createShootaTailGun() { return { name: &#34;Shoota Tail Gun&#34;, fireArc: [&#34;REAR&#34;], firePower: [1, 0, 0], damage: 6, ammonition: 160, specials: [ { keyword: &#34;TAIL_GUNNER&#34;, value: 0, }, { keyword: &#34;AERIAL_ATTACK&#34;, value: 0, }, ], }; } function createLascannon() { return { name: &#34;Lascannon&#34;, fireArc: [&#34;FRONT&#34;], firePower: [0, 2, 1], damage: 2, ammonition: 160, specials: [ { keyword: &#34;EXTRA_DAMAGE&#34;, value: 6, }, ], }; } function createDorsalBolterTurret() { return { name: &#34;Bolter Turret&#34;, fireArc: [&#34;ALL_ROUND&#34;, &#34;UP&#34;], firePower: [3, 2, 0], damage: 5, ammonition: 160, specials: [ { keyword: &#34;AERIAL_ATTACK&#34;, value: 0, }, ], }; } function createRearBolterTurret() { return { name: &#34;Bolter Turret&#34;, fireArc: [&#34;REAR&#34;], firePower: [3, 2, 0], damage: 5, ammonition: 160, specials: [ { keyword: &#34;TAIL_GUNNER&#34;, value: 0, }, { keyword: &#34;AERIAL_ATTACK&#34;, value: 0, }, ], }; } function createBombBay() { return { name: &#34;Bomb bay&#34;, fireArc: [&#34;REAR&#34;], firePower: [8, 0, 0], damage: 2, ammonition: 3, specials: [ { keyword: &#34;GROUND_ATTACK&#34;, value: 0, }, { keyword: &#34;EXTRA_DAMAGE&#34;, value: 5, }, ], }; } function createHeavyStubber() { return { name: &#34;Heavy Stubber&#34;, fireArc: [&#34;REAR&#34;, &#34;UP&#34;], firePower: [1, 1, 0], damage: 5, ammonition: 160, specials: [ { keyword: &#34;TAIL_GUNNER&#34;, value: 0, }, ], }; } function createTwinMultiLasers() { return { name: &#34;Multi Laser&#34;, fireArc: [&#34;FRONT&#34;], firePower: [4, 6, 2], damage: 5, ammonition: 160, specials: [], }; } // -- ------------------------------------------------------- -- // Aircrafts // -- ------------------------------------------------------- -- function createFireRaptorGunship() { return { name: &#34;Fire Raptor Gunship&#34;, aircraftClass: &#34;FIGHTER&#34;, alliance: &#34;ADEPTUS_ASTARTES&#34;, cost: 31, x: 0, y: 0, currentAltitude: 0, structure: 4, transport: 0, fuel: 0, throttle: 2, manoueuvres: 5, handling: 3, minSpeed: 0, maxSpeed: 5, currentSpeed: 0, maxAltitude: 5, src: &#34;file://."><meta property="og:title" content><meta property="og:description" content="Exercise 19 - Array Methods // -- ------------------------------------------------------- -- // Weapons // -- ------------------------------------------------------- -- function createAvengerBoltCannon() { return { name: &#34;Avenger Bolt Cannon&#34;, fireArc: [&#34;FRONT&#34;], firePower: [3, 7, 0], damage: 4, ammonition: 160, specials: [ { keyword: &#34;EXTRA_DAMAGE&#34;, value: 6, }, ], }; } function createHeavyBolterPortTurret() { return { name: &#34;Heavy Bolter Turret&#34;, fireArc: [&#34;LEFT_SIDE&#34;], firePower: [6, 2, 0], damage: 5, ammonition: 160, specials: [], }; } function createHellstrikeMissleLauncher() { return { name: &#34;Hellstrike Missle Launcher&#34;, fireArc: [&#34;FRONT&#34;], firePower: [2, 2, 2], damage: 3, ammonition: 3, specials: [ { keyword: &#34;GROUND_ATTACK&#34;, value: 0, }, { keyword: &#34;EXTRA_DAMAGE&#34;, value: 6, }, ], }; } function createQuadLascannon() { return { name: &#34;Quad Lascannon&#34;, fireArc: [&#34;FRONT&#34;], firePower: [0, 4, 2], damage: 2, ammonition: 160, specials: [ { keyword: &#34;EXTRA_DAMAGE&#34;, value: 6, }, ], }; } function createTwinHeavyBolters() { return { name: &#34;Twin Heavy Bolters&#34;, fireArc: [&#34;FRONT&#34;], firePower: [3, 1, 0], damage: 5, ammonition: 160, specials: [], }; } function createDualFragMisslePods() { return { name: &#34;Dual Frag Missle Pods&#34;, fireArc: [&#34;FRONT&#34;], firePower: [3, 3, 1], damage: 5, ammonition: 160, specials: [], }; } function createRotaryFragMissleLauncher() { return { name: &#34;Rotary Frag Missle Launcher&#34;, fireArc: [&#34;FRONT&#34;], firePower: [2, 2, 1], damage: 5, ammonition: 160, specials: [], }; } function createTurboLaserDestructor() { return { name: &#34;Turbo Laser Destructor&#34;, fireArc: [&#34;FRONT&#34;, &#34;UP&#34;], firePower: [2, 2, 3], damage: 2, ammonition: 160, specials: [ { keyword: &#34;EXTRA_DAMAGE&#34;, value: 4, }, ], }; } function createTwinLascannon() { return { name: &#34;Twin Lascannon&#34;, fireArc: [&#34;FRONT&#34;], firePower: [0, 2, 1], damage: 2, ammonition: 160, specials: [ { keyword: &#34;EXTRA_DAMAGE&#34;, value: 6, }, ], }; } function createHeavyBolterStarboardTurret() { return { name: &#34;Heavy Bolter Turret&#34;, fireArc: [&#34;RIGHT_SIDE&#34;, &#34;FRONT&#34;], firePower: [4, 1, 0], damage: 5, ammonition: 160, specials: [], }; } function createHeavyBolterPortWing() { return { name: &#34;Heavy Bolter Turret&#34;, fireArc: [&#34;ALL_ROUND&#34;, &#34;DOWN&#34;], firePower: [4, 1, 0], damage: 5, ammonition: 160, specials: [], }; } function createHeavyBolterStarboardWing() { return { name: &#34;Heavy Bolter Turret&#34;, fireArc: [&#34;ALL_ROUND&#34;, &#34;DOWN&#34;], firePower: [4, 1, 0], damage: 5, ammonition: 160, specials: [], }; } function createTwinBrightLances() { return { name: &#34;Bright Lance&#34;, fireArc: [&#34;FRONT&#34;], firePower: [1, 2, 2], damage: 2, ammonition: 160, specials: [ { keyword: &#34;EXTRA_DAMAGE&#34;, value: 4, }, ], }; } function createTwinScatterLaser() { return { name: &#34;Scatter Laser&#34;, fireArc: [&#34;FRONT&#34;], firePower: [6, 4, 0], damage: 4, ammonition: 160, specials: [ { keyword: &#34;AERIAL_ATTACK&#34;, value: 0, }, ], }; } function createTwinStarcannon() { return { name: &#34;Starcannon&#34;, fireArc: [&#34;FRONT&#34;], firePower: [3, 2, 1], damage: 3, ammonition: 160, specials: [ { keyword: &#34;AERIAL_ATTACK&#34;, value: 0, }, ], }; } function createShurikenCannon() { return { name: &#34;Shurikencannon&#34;, fireArc: [&#34;FRONT&#34;], firePower: [8, 4, 0], damage: 4, ammonition: 160, specials: [ { keyword: &#34;EXTRA_DAMAGE&#34;, value: 5, }, ], }; } function createNightfirePlasmaMissileArray() { return { name: &#34;Nightfire Plasma Missile Array&#34;, fireArc: [&#34;FRONT&#34;], firePower: [2, 2, 2], damage: 3, ammonition: 2, specials: [ { keyword: &#34;EXTRA_DAMAGE&#34;, value: 5, }, { keyword: &#34;AERIAL_ATTACK&#34;, value: 0, }, ], }; } function createNightfireKrakMissileArray() { return { name: &#34;Nightfire Krak Missile Array&#34;, fireArc: [&#34;FRONT&#34;], firePower: [2, 2, 2], damage: 3, ammonition: 2, specials: [ { keyword: &#34;EXTRA_DAMAGE&#34;, value: 5, }, { keyword: &#34;GROUND_ATTACK&#34;, value: 0, }, ], }; } function createTwinPulseLasers() { return { name: &#34;Pulse Laser&#34;, fireArc: [&#34;FRONT&#34;], firePower: [2, 3, 2], damage: 3, ammonition: 160, specials: [ { keyword: &#34;AERIAL_ATTACK&#34;, value: 0, }, ], }; } function createMissileArray() { return { name: &#34;Missile Array&#34;, fireArc: [&#34;FRONT&#34;], firePower: [3, 2, 0], damage: 4, ammonition: 160, specials: [], }; } function createBombRack() { return { name: &#34;Bomb Rack&#34;, fireArc: [&#34;REAR&#34;], firePower: [4, 0, 0], damage: 2, ammonition: 3, specials: [ { keyword: &#34;EXTRA_DAMAGE&#34;, value: 5, }, { keyword: &#34;GROUND_ATTACK&#34;, value: 0, }, ], }; } function createTwinLinkedShurikenCannon() { return { name: &#34;Heavy Shuriken Cannon&#34;, fireArc: [&#34;FRONT&#34;], firePower: [10, 6, 0], damage: 4, ammonition: 160, specials: [], }; } function createNoseMountedScatterLaser() { return { name: &#34;Nose mounted Scatter Laser&#34;, fireArc: [&#34;FRONT&#34;], firePower: [4, 2, 0], damage: 4, ammonition: 160, specials: [ { keyword: &#34;AERIAL_ATTACK&#34;, value: 0, }, ], }; } function createTwinLinkedPulseLasers() { return { name: &#34;Twin Linked Pulse Laser&#34;, fireArc: [&#34;FRONT&#34;], firePower: [4, 6, 2], damage: 3, ammonition: 160, specials: [ { keyword: &#34;AERIAL_ATTACK&#34;, value: 0, }, ], }; } function createTwinLinkedPulsar() { return { name: &#34;Twin Linked Pulsar&#34;, fireArc: [&#34;FRONT&#34;], firePower: [2, 4, 4], damage: 2, ammonition: 160, specials: [ { keyword: &#34;EXTRA_DAMAGE&#34;, value: 5, }, ], }; } function createHeavyDScythe() { return { name: &#34;Heavy DScythe&#34;, fireArc: [&#34;FRONT&#34;], firePower: [3, 3, 0], damage: 2, ammonition: 160, specials: [ { keyword: &#34;EXTRA_DAMAGE&#34;, value: 3, }, ], }; } function createQuadBigShootas() { return { name: &#34;Quad Big Shoota&#34;, fireArc: [&#34;FRONT&#34;], firePower: [8, 4, 0], damage: 5, ammonition: 160, specials: [], }; } function createPortShootaTurret() { return { name: &#34;Shoota Turret&#34;, fireArc: [&#34;LEFT_SIDE, UP&#34;], firePower: [2, 1, 0], damage: 5, ammonition: 160, specials: [], }; } function createStarboardShootaTurret() { return { name: &#34;Shoota Turret&#34;, fireArc: [&#34;RIGHT_SIDE, UP&#34;], firePower: [2, 1, 0], damage: 5, ammonition: 160, specials: [], }; } function createGrotBomms() { return { name: &#34;Grot Bomms&#34;, fireArc: [&#34;LEFT_SIDE&#34;, &#34;RIDE_SIDE&#34;, &#34;UP&#34;, &#34;FRONT&#34;], firePower: [0, 0, 0], damage: 2, ammonition: 160, specials: [ { keyword: &#34;AUTONOMOUS_WEAPON&#34;, value: 0, }, { keyword: &#34;EXTRA_DAMAGE&#34;, value: 4, }, ], }; } function createBigShootaTurret() { return { name: &#34;Big Shoota Turret&#34;, fireArc: [&#34;REAR&#34;, &#34;RIGHT_SIDE&#34;, &#34;LEFT_SIDE&#34;, &#34;UP&#34;], firePower: [3, 1, 0], damage: 5, ammonition: 160, specials: [ { keyword: &#34;TAIL_GUNNER&#34;, value: 0, }, { keyword: &#34;AERIAL_ATTACK&#34;, value: 0, }, ], }; } function createShootaTailGun() { return { name: &#34;Shoota Tail Gun&#34;, fireArc: [&#34;REAR&#34;], firePower: [1, 0, 0], damage: 6, ammonition: 160, specials: [ { keyword: &#34;TAIL_GUNNER&#34;, value: 0, }, { keyword: &#34;AERIAL_ATTACK&#34;, value: 0, }, ], }; } function createLascannon() { return { name: &#34;Lascannon&#34;, fireArc: [&#34;FRONT&#34;], firePower: [0, 2, 1], damage: 2, ammonition: 160, specials: [ { keyword: &#34;EXTRA_DAMAGE&#34;, value: 6, }, ], }; } function createDorsalBolterTurret() { return { name: &#34;Bolter Turret&#34;, fireArc: [&#34;ALL_ROUND&#34;, &#34;UP&#34;], firePower: [3, 2, 0], damage: 5, ammonition: 160, specials: [ { keyword: &#34;AERIAL_ATTACK&#34;, value: 0, }, ], }; } function createRearBolterTurret() { return { name: &#34;Bolter Turret&#34;, fireArc: [&#34;REAR&#34;], firePower: [3, 2, 0], damage: 5, ammonition: 160, specials: [ { keyword: &#34;TAIL_GUNNER&#34;, value: 0, }, { keyword: &#34;AERIAL_ATTACK&#34;, value: 0, }, ], }; } function createBombBay() { return { name: &#34;Bomb bay&#34;, fireArc: [&#34;REAR&#34;], firePower: [8, 0, 0], damage: 2, ammonition: 3, specials: [ { keyword: &#34;GROUND_ATTACK&#34;, value: 0, }, { keyword: &#34;EXTRA_DAMAGE&#34;, value: 5, }, ], }; } function createHeavyStubber() { return { name: &#34;Heavy Stubber&#34;, fireArc: [&#34;REAR&#34;, &#34;UP&#34;], firePower: [1, 1, 0], damage: 5, ammonition: 160, specials: [ { keyword: &#34;TAIL_GUNNER&#34;, value: 0, }, ], }; } function createTwinMultiLasers() { return { name: &#34;Multi Laser&#34;, fireArc: [&#34;FRONT&#34;], firePower: [4, 6, 2], damage: 5, ammonition: 160, specials: [], }; } // -- ------------------------------------------------------- -- // Aircrafts // -- ------------------------------------------------------- -- function createFireRaptorGunship() { return { name: &#34;Fire Raptor Gunship&#34;, aircraftClass: &#34;FIGHTER&#34;, alliance: &#34;ADEPTUS_ASTARTES&#34;, cost: 31, x: 0, y: 0, currentAltitude: 0, structure: 4, transport: 0, fuel: 0, throttle: 2, manoueuvres: 5, handling: 3, minSpeed: 0, maxSpeed: 5, currentSpeed: 0, maxAltitude: 5, src: &#34;file://."><meta property="og:type" content="website"><meta property="og:image" content="https://deep-thought.norwin.aticon.png"><meta property="og:url" content="https://deep-thought.norwin.at/tech-kb/basics/exercises/Exercise-19-Array-Methods/"><meta property="og:width" content="200"><meta property="og:height" content="200"><meta name=twitter:card content="summary"><meta name=twitter:title content><meta name=twitter:description content="Exercise 19 - Array Methods // -- ------------------------------------------------------- -- // Weapons // -- ------------------------------------------------------- -- function createAvengerBoltCannon() { return { name: &#34;Avenger Bolt Cannon&#34;, fireArc: [&#34;FRONT&#34;], firePower: [3, 7, 0], damage: 4, ammonition: 160, specials: [ { keyword: &#34;EXTRA_DAMAGE&#34;, value: 6, }, ], }; } function createHeavyBolterPortTurret() { return { name: &#34;Heavy Bolter Turret&#34;, fireArc: [&#34;LEFT_SIDE&#34;], firePower: [6, 2, 0], damage: 5, ammonition: 160, specials: [], }; } function createHellstrikeMissleLauncher() { return { name: &#34;Hellstrike Missle Launcher&#34;, fireArc: [&#34;FRONT&#34;], firePower: [2, 2, 2], damage: 3, ammonition: 3, specials: [ { keyword: &#34;GROUND_ATTACK&#34;, value: 0, }, { keyword: &#34;EXTRA_DAMAGE&#34;, value: 6, }, ], }; } function createQuadLascannon() { return { name: &#34;Quad Lascannon&#34;, fireArc: [&#34;FRONT&#34;], firePower: [0, 4, 2], damage: 2, ammonition: 160, specials: [ { keyword: &#34;EXTRA_DAMAGE&#34;, value: 6, }, ], }; } function createTwinHeavyBolters() { return { name: &#34;Twin Heavy Bolters&#34;, fireArc: [&#34;FRONT&#34;], firePower: [3, 1, 0], damage: 5, ammonition: 160, specials: [], }; } function createDualFragMisslePods() { return { name: &#34;Dual Frag Missle Pods&#34;, fireArc: [&#34;FRONT&#34;], firePower: [3, 3, 1], damage: 5, ammonition: 160, specials: [], }; } function createRotaryFragMissleLauncher() { return { name: &#34;Rotary Frag Missle Launcher&#34;, fireArc: [&#34;FRONT&#34;], firePower: [2, 2, 1], damage: 5, ammonition: 160, specials: [], }; } function createTurboLaserDestructor() { return { name: &#34;Turbo Laser Destructor&#34;, fireArc: [&#34;FRONT&#34;, &#34;UP&#34;], firePower: [2, 2, 3], damage: 2, ammonition: 160, specials: [ { keyword: &#34;EXTRA_DAMAGE&#34;, value: 4, }, ], }; } function createTwinLascannon() { return { name: &#34;Twin Lascannon&#34;, fireArc: [&#34;FRONT&#34;], firePower: [0, 2, 1], damage: 2, ammonition: 160, specials: [ { keyword: &#34;EXTRA_DAMAGE&#34;, value: 6, }, ], }; } function createHeavyBolterStarboardTurret() { return { name: &#34;Heavy Bolter Turret&#34;, fireArc: [&#34;RIGHT_SIDE&#34;, &#34;FRONT&#34;], firePower: [4, 1, 0], damage: 5, ammonition: 160, specials: [], }; } function createHeavyBolterPortWing() { return { name: &#34;Heavy Bolter Turret&#34;, fireArc: [&#34;ALL_ROUND&#34;, &#34;DOWN&#34;], firePower: [4, 1, 0], damage: 5, ammonition: 160, specials: [], }; } function createHeavyBolterStarboardWing() { return { name: &#34;Heavy Bolter Turret&#34;, fireArc: [&#34;ALL_ROUND&#34;, &#34;DOWN&#34;], firePower: [4, 1, 0], damage: 5, ammonition: 160, specials: [], }; } function createTwinBrightLances() { return { name: &#34;Bright Lance&#34;, fireArc: [&#34;FRONT&#34;], firePower: [1, 2, 2], damage: 2, ammonition: 160, specials: [ { keyword: &#34;EXTRA_DAMAGE&#34;, value: 4, }, ], }; } function createTwinScatterLaser() { return { name: &#34;Scatter Laser&#34;, fireArc: [&#34;FRONT&#34;], firePower: [6, 4, 0], damage: 4, ammonition: 160, specials: [ { keyword: &#34;AERIAL_ATTACK&#34;, value: 0, }, ], }; } function createTwinStarcannon() { return { name: &#34;Starcannon&#34;, fireArc: [&#34;FRONT&#34;], firePower: [3, 2, 1], damage: 3, ammonition: 160, specials: [ { keyword: &#34;AERIAL_ATTACK&#34;, value: 0, }, ], }; } function createShurikenCannon() { return { name: &#34;Shurikencannon&#34;, fireArc: [&#34;FRONT&#34;], firePower: [8, 4, 0], damage: 4, ammonition: 160, specials: [ { keyword: &#34;EXTRA_DAMAGE&#34;, value: 5, }, ], }; } function createNightfirePlasmaMissileArray() { return { name: &#34;Nightfire Plasma Missile Array&#34;, fireArc: [&#34;FRONT&#34;], firePower: [2, 2, 2], damage: 3, ammonition: 2, specials: [ { keyword: &#34;EXTRA_DAMAGE&#34;, value: 5, }, { keyword: &#34;AERIAL_ATTACK&#34;, value: 0, }, ], }; } function createNightfireKrakMissileArray() { return { name: &#34;Nightfire Krak Missile Array&#34;, fireArc: [&#34;FRONT&#34;], firePower: [2, 2, 2], damage: 3, ammonition: 2, specials: [ { keyword: &#34;EXTRA_DAMAGE&#34;, value: 5, }, { keyword: &#34;GROUND_ATTACK&#34;, value: 0, }, ], }; } function createTwinPulseLasers() { return { name: &#34;Pulse Laser&#34;, fireArc: [&#34;FRONT&#34;], firePower: [2, 3, 2], damage: 3, ammonition: 160, specials: [ { keyword: &#34;AERIAL_ATTACK&#34;, value: 0, }, ], }; } function createMissileArray() { return { name: &#34;Missile Array&#34;, fireArc: [&#34;FRONT&#34;], firePower: [3, 2, 0], damage: 4, ammonition: 160, specials: [], }; } function createBombRack() { return { name: &#34;Bomb Rack&#34;, fireArc: [&#34;REAR&#34;], firePower: [4, 0, 0], damage: 2, ammonition: 3, specials: [ { keyword: &#34;EXTRA_DAMAGE&#34;, value: 5, }, { keyword: &#34;GROUND_ATTACK&#34;, value: 0, }, ], }; } function createTwinLinkedShurikenCannon() { return { name: &#34;Heavy Shuriken Cannon&#34;, fireArc: [&#34;FRONT&#34;], firePower: [10, 6, 0], damage: 4, ammonition: 160, specials: [], }; } function createNoseMountedScatterLaser() { return { name: &#34;Nose mounted Scatter Laser&#34;, fireArc: [&#34;FRONT&#34;], firePower: [4, 2, 0], damage: 4, ammonition: 160, specials: [ { keyword: &#34;AERIAL_ATTACK&#34;, value: 0, }, ], }; } function createTwinLinkedPulseLasers() { return { name: &#34;Twin Linked Pulse Laser&#34;, fireArc: [&#34;FRONT&#34;], firePower: [4, 6, 2], damage: 3, ammonition: 160, specials: [ { keyword: &#34;AERIAL_ATTACK&#34;, value: 0, }, ], }; } function createTwinLinkedPulsar() { return { name: &#34;Twin Linked Pulsar&#34;, fireArc: [&#34;FRONT&#34;], firePower: [2, 4, 4], damage: 2, ammonition: 160, specials: [ { keyword: &#34;EXTRA_DAMAGE&#34;, value: 5, }, ], }; } function createHeavyDScythe() { return { name: &#34;Heavy DScythe&#34;, fireArc: [&#34;FRONT&#34;], firePower: [3, 3, 0], damage: 2, ammonition: 160, specials: [ { keyword: &#34;EXTRA_DAMAGE&#34;, value: 3, }, ], }; } function createQuadBigShootas() { return { name: &#34;Quad Big Shoota&#34;, fireArc: [&#34;FRONT&#34;], firePower: [8, 4, 0], damage: 5, ammonition: 160, specials: [], }; } function createPortShootaTurret() { return { name: &#34;Shoota Turret&#34;, fireArc: [&#34;LEFT_SIDE, UP&#34;], firePower: [2, 1, 0], damage: 5, ammonition: 160, specials: [], }; } function createStarboardShootaTurret() { return { name: &#34;Shoota Turret&#34;, fireArc: [&#34;RIGHT_SIDE, UP&#34;], firePower: [2, 1, 0], damage: 5, ammonition: 160, specials: [], }; } function createGrotBomms() { return { name: &#34;Grot Bomms&#34;, fireArc: [&#34;LEFT_SIDE&#34;, &#34;RIDE_SIDE&#34;, &#34;UP&#34;, &#34;FRONT&#34;], firePower: [0, 0, 0], damage: 2, ammonition: 160, specials: [ { keyword: &#34;AUTONOMOUS_WEAPON&#34;, value: 0, }, { keyword: &#34;EXTRA_DAMAGE&#34;, value: 4, }, ], }; } function createBigShootaTurret() { return { name: &#34;Big Shoota Turret&#34;, fireArc: [&#34;REAR&#34;, &#34;RIGHT_SIDE&#34;, &#34;LEFT_SIDE&#34;, &#34;UP&#34;], firePower: [3, 1, 0], damage: 5, ammonition: 160, specials: [ { keyword: &#34;TAIL_GUNNER&#34;, value: 0, }, { keyword: &#34;AERIAL_ATTACK&#34;, value: 0, }, ], }; } function createShootaTailGun() { return { name: &#34;Shoota Tail Gun&#34;, fireArc: [&#34;REAR&#34;], firePower: [1, 0, 0], damage: 6, ammonition: 160, specials: [ { keyword: &#34;TAIL_GUNNER&#34;, value: 0, }, { keyword: &#34;AERIAL_ATTACK&#34;, value: 0, }, ], }; } function createLascannon() { return { name: &#34;Lascannon&#34;, fireArc: [&#34;FRONT&#34;], firePower: [0, 2, 1], damage: 2, ammonition: 160, specials: [ { keyword: &#34;EXTRA_DAMAGE&#34;, value: 6, }, ], }; } function createDorsalBolterTurret() { return { name: &#34;Bolter Turret&#34;, fireArc: [&#34;ALL_ROUND&#34;, &#34;UP&#34;], firePower: [3, 2, 0], damage: 5, ammonition: 160, specials: [ { keyword: &#34;AERIAL_ATTACK&#34;, value: 0, }, ], }; } function createRearBolterTurret() { return { name: &#34;Bolter Turret&#34;, fireArc: [&#34;REAR&#34;], firePower: [3, 2, 0], damage: 5, ammonition: 160, specials: [ { keyword: &#34;TAIL_GUNNER&#34;, value: 0, }, { keyword: &#34;AERIAL_ATTACK&#34;, value: 0, }, ], }; } function createBombBay() { return { name: &#34;Bomb bay&#34;, fireArc: [&#34;REAR&#34;], firePower: [8, 0, 0], damage: 2, ammonition: 3, specials: [ { keyword: &#34;GROUND_ATTACK&#34;, value: 0, }, { keyword: &#34;EXTRA_DAMAGE&#34;, value: 5, }, ], }; } function createHeavyStubber() { return { name: &#34;Heavy Stubber&#34;, fireArc: [&#34;REAR&#34;, &#34;UP&#34;], firePower: [1, 1, 0], damage: 5, ammonition: 160, specials: [ { keyword: &#34;TAIL_GUNNER&#34;, value: 0, }, ], }; } function createTwinMultiLasers() { return { name: &#34;Multi Laser&#34;, fireArc: [&#34;FRONT&#34;], firePower: [4, 6, 2], damage: 5, ammonition: 160, specials: [], }; } // -- ------------------------------------------------------- -- // Aircrafts // -- ------------------------------------------------------- -- function createFireRaptorGunship() { return { name: &#34;Fire Raptor Gunship&#34;, aircraftClass: &#34;FIGHTER&#34;, alliance: &#34;ADEPTUS_ASTARTES&#34;, cost: 31, x: 0, y: 0, currentAltitude: 0, structure: 4, transport: 0, fuel: 0, throttle: 2, manoueuvres: 5, handling: 3, minSpeed: 0, maxSpeed: 5, currentSpeed: 0, maxAltitude: 5, src: &#34;file://."><meta name=twitter:image content="https://deep-thought.norwin.aticon.png"><meta name=twitter:site content="n0rwin"><title>🧠 Deep Thought 🧠</title><meta name=viewport content="width=device-width,initial-scale=1"><link rel="shortcut icon" type=image/png href=https://deep-thought.norwin.at/icon.png><link href=https://deep-thought.norwin.at/styles.6eb97c1dc93f3a2d6970042c5ae95ef7.min.css rel=stylesheet><link href=https://deep-thought.norwin.at/styles/_light_syntax.86a48a52faebeaaf42158b72922b1c90.min.css rel=stylesheet id=theme-link><script src=https://deep-thought.norwin.at/js/darkmode.f066e51f8083fef89292fd03cdfcc9f0.min.js></script>
+<script src=https://deep-thought.norwin.at/js/util.00639692264b21bc3ee219733d38a8be.min.js></script>
+<link rel=preload href=https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css as=style onload='this.onload=null,this.rel="stylesheet"' integrity=sha384-R4558gYOUz8mP9YWpZJjofhk+zx0AS11p36HnD2ZKj/6JR5z27gSSULCNHIRReVs crossorigin=anonymous><script defer src=https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js integrity=sha384-z1fJDqw8ZApjGO3/unPWUPsIymfsJmyrDVWC8Tv/a1HeOtGmkwNd/7xUS0Xcnvsx crossorigin=anonymous></script>
+<script defer src=https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/contrib/auto-render.min.js integrity=sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR crossorigin=anonymous></script>
+<script defer src=https://cdn.jsdelivr.net/npm/katex@0.16.2/dist/contrib/copy-tex.min.js integrity=sha384-ww/583aHhxWkz5DEVn6OKtNiIaLi2iBRNZXfJRiY1Ai7tnJ9UXpEsyvOITVpTl4A crossorigin=anonymous></script>
+<script src=https://cdn.jsdelivr.net/npm/@floating-ui/core@1.2.1></script>
+<script src=https://cdn.jsdelivr.net/npm/@floating-ui/dom@1.2.1></script>
+<script defer src=https://deep-thought.norwin.at/js/popover.aa9bc99c7c38d3ae9538f218f1416adb.min.js></script>
+<script defer src=https://deep-thought.norwin.at/js/code-title.ce4a43f09239a9efb48fee342e8ef2df.min.js></script>
+<script defer src=https://deep-thought.norwin.at/js/clipboard.2913da76d3cb21c5deaa4bae7da38c9f.min.js></script>
+<script defer src=https://deep-thought.norwin.at/js/callouts.7723cac461d613d118ee8bb8216b9838.min.js></script>
+<script>const SEARCH_ENABLED=!1,LATEX_ENABLED=!0,PRODUCTION=!0,BASE_URL="https://deep-thought.norwin.at",fetchData=Promise.all([fetch("https://deep-thought.norwin.at/indices/linkIndex.23bed28c5021f93f995f297ac50ecc71.min.json").then(e=>e.json()).then(e=>({index:e.index,links:e.links})),fetch("https://deep-thought.norwin.at/indices/contentIndex.e05ea136baac3c3070ab5ab6e65145b9.min.json").then(e=>e.json())]).then(([{index:e,links:t},n])=>({index:e,links:t,content:n})),render=()=>{const e=new URL(BASE_URL),t=e.pathname,n=window.location.pathname,s=t==n;addCopyButtons(),addTitleToCodeBlocks(),addCollapsibleCallouts(),initPopover("https://deep-thought.norwin.at",!0);const o=document.getElementById("footer");if(o){const e=document.getElementById("graph-container");if(!e)return requestAnimationFrame(render);e.textContent="";const t=s&&!1;drawGraph("https://deep-thought.norwin.at",t,[{"/moc":"#4388cc"}],t?{centerForce:1,depth:-1,enableDrag:!0,enableLegend:!1,enableZoom:!0,fontSize:.5,linkDistance:1,opacityScale:3,repelForce:1,scale:1.4}:{centerForce:1,depth:1,enableDrag:!0,enableLegend:!1,enableZoom:!0,fontSize:.6,linkDistance:1,opacityScale:3,repelForce:2,scale:1.2})}var i=document.getElementsByClassName("mermaid");i.length>0&&import("https://unpkg.com/mermaid@9/dist/mermaid.esm.min.mjs").then(e=>{e.default.init()});function a(e){const t=e.target,n=t.className.split(" "),s=n.includes("broken"),o=n.includes("internal-link");plausible("Link Click",{props:{href:t.href,broken:s,internal:o,graph:!1}})}const r=document.querySelectorAll("a");for(link of r)link.className.includes("root-title")&&link.addEventListener("click",a,{once:!0})},init=(e=document)=>{addCopyButtons(),addTitleToCodeBlocks(),renderMathInElement(e.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"$",right:"$",display:!1}],macros:{"’":"'"},throwOnError:!1})}</script><script type=module>
+    import { attachSPARouting } from "https:\/\/deep-thought.norwin.at\/js\/router.d6fe6bd821db9ea97f9aeefae814d8e7.min.js"
+    attachSPARouting(init, render)
+  </script><script defer data-domain=deep-thought.norwin.at src=https://plausible.io/js/script.js></script>
+<script>window.plausible=window.plausible||function(){(window.plausible.q=window.plausible.q||[]).push(arguments)}</script></head><body><div id=search-container><div id=search-space><input autocomplete=off id=search-bar name=search type=text aria-label=Search placeholder="Search for something..."><div id=results-container></div></div></div><script src=https://cdn.jsdelivr.net/npm/flexsearch@0.7.21/dist/flexsearch.bundle.js integrity="sha256-i3A0NZGkhsKjVMzFxv3ksk0DZh3aXqu0l49Bbh0MdjE=" crossorigin=anonymous defer></script>
+<script defer src=https://deep-thought.norwin.at/js/full-text-search.e6e2e0c213187ca0c703d6e2c7a77fcd.min.js></script><div class=singlePage><header><h1 id=page-title><a class=root-title href=https://deep-thought.norwin.at>🧠 Deep Thought 🧠</a></h1><div class=spacer></div><div id=search-icon><p>Search</p><svg tabindex="0" aria-labelledby="title desc" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title id="title">Search Icon</title><desc id="desc">Icon to open search</desc><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"/><circle cx="8" cy="8" r="7"/></g></svg></div><div class=darkmode><input class=toggle id=darkmode-toggle type=checkbox tabindex=-1>
+<label id=toggle-label-light for=darkmode-toggle tabindex=-1><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="dayIcon" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35"><title>Light Mode</title><path d="M6 17.5C6 16.672 5.328 16 4.5 16h-3C.672 16 0 16.672.0 17.5S.672 19 1.5 19h3C5.328 19 6 18.328 6 17.5zM7.5 26c-.414.0-.789.168-1.061.439l-2 2C4.168 28.711 4 29.086 4 29.5 4 30.328 4.671 31 5.5 31c.414.0.789-.168 1.06-.44l2-2C8.832 28.289 9 27.914 9 27.5 9 26.672 8.329 26 7.5 26zm10-20C18.329 6 19 5.328 19 4.5v-3C19 .672 18.329.0 17.5.0S16 .672 16 1.5v3C16 5.328 16.671 6 17.5 6zm10 3c.414.0.789-.168 1.06-.439l2-2C30.832 6.289 31 5.914 31 5.5 31 4.672 30.329 4 29.5 4c-.414.0-.789.168-1.061.44l-2 2C26.168 6.711 26 7.086 26 7.5 26 8.328 26.671 9 27.5 9zM6.439 8.561C6.711 8.832 7.086 9 7.5 9 8.328 9 9 8.328 9 7.5c0-.414-.168-.789-.439-1.061l-2-2C6.289 4.168 5.914 4 5.5 4 4.672 4 4 4.672 4 5.5c0 .414.168.789.439 1.06l2 2.001zM33.5 16h-3c-.828.0-1.5.672-1.5 1.5s.672 1.5 1.5 1.5h3c.828.0 1.5-.672 1.5-1.5S34.328 16 33.5 16zM28.561 26.439C28.289 26.168 27.914 26 27.5 26c-.828.0-1.5.672-1.5 1.5.0.414.168.789.439 1.06l2 2C28.711 30.832 29.086 31 29.5 31c.828.0 1.5-.672 1.5-1.5.0-.414-.168-.789-.439-1.061l-2-2zM17.5 29c-.829.0-1.5.672-1.5 1.5v3c0 .828.671 1.5 1.5 1.5s1.5-.672 1.5-1.5v-3C19 29.672 18.329 29 17.5 29zm0-22C11.71 7 7 11.71 7 17.5S11.71 28 17.5 28 28 23.29 28 17.5 23.29 7 17.5 7zm0 18c-4.136.0-7.5-3.364-7.5-7.5s3.364-7.5 7.5-7.5 7.5 3.364 7.5 7.5S21.636 25 17.5 25z"/></svg></label><label id=toggle-label-dark for=darkmode-toggle tabindex=-1><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="nightIcon" viewBox="0 0 100 100" style="enable-background='new 0 0 100 100'"><title>Dark Mode</title><path d="M96.76 66.458c-.853-.852-2.15-1.064-3.23-.534-6.063 2.991-12.858 4.571-19.655 4.571C62.022 70.495 50.88 65.88 42.5 57.5 29.043 44.043 25.658 23.536 34.076 6.47c.532-1.08.318-2.379-.534-3.23-.851-.852-2.15-1.064-3.23-.534-4.918 2.427-9.375 5.619-13.246 9.491-9.447 9.447-14.65 22.008-14.65 35.369.0 13.36 5.203 25.921 14.65 35.368s22.008 14.65 35.368 14.65c13.361.0 25.921-5.203 35.369-14.65 3.872-3.871 7.064-8.328 9.491-13.246C97.826 68.608 97.611 67.309 96.76 66.458z"/></svg></label></div></header><article><p class=meta>Last updated
+Unknown</p><ul class=tags></ul><aside class=mainTOC><details><summary>Table of Contents</summary><nav id=TableOfContents></nav></details></aside><a href=#exercise-19---array-methods><h1 id=exercise-19---array-methods><span class=hanchor arialabel=Anchor># </span>Exercise 19 - Array Methods</h1></a><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-javascript data-lang=javascript><span style=display:flex><span><span style=color:#6272a4>// -- ------------------------------------------------------- --
+</span></span></span><span style=display:flex><span><span style=color:#6272a4>//  Weapons
+</span></span></span><span style=display:flex><span><span style=color:#6272a4>// -- ------------------------------------------------------- --
+</span></span></span><span style=display:flex><span><span style=color:#6272a4></span><span style=color:#8be9fd;font-style:italic>function</span> createAvengerBoltCannon() {
+</span></span><span style=display:flex><span>  <span style=color:#ff79c6>return</span> {
+</span></span><span style=display:flex><span>    name<span style=color:#ff79c6>:</span> <span style=color:#f1fa8c>&#34;Avenger Bolt Cannon&#34;</span>,
+</span></span><span style=display:flex><span>    fireArc<span style=color:#ff79c6>:</span> [<span style=color:#f1fa8c>&#34;FRONT&#34;</span>],
+</span></span><span style=display:flex><span>    firePower<span style=color:#ff79c6>:</span> [<span style=color:#bd93f9>3</span>, <span style=color:#bd93f9>7</span>, <span style=color:#bd93f9>0</span>],
+</span></span><span style=display:flex><span>    damage<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>4</span>,
+</span></span><span style=display:flex><span>    ammonition<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>160</span>,
+</span></span><span style=display:flex><span>    specials<span style=color:#ff79c6>:</span> [
+</span></span><span style=display:flex><span>      {
+</span></span><span style=display:flex><span>        keyword<span style=color:#ff79c6>:</span> <span style=color:#f1fa8c>&#34;EXTRA_DAMAGE&#34;</span>,
+</span></span><span style=display:flex><span>        value<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>6</span>,
+</span></span><span style=display:flex><span>      },
+</span></span><span style=display:flex><span>    ],
+</span></span><span style=display:flex><span>  };
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#8be9fd;font-style:italic>function</span> createHeavyBolterPortTurret() {
+</span></span><span style=display:flex><span>  <span style=color:#ff79c6>return</span> {
+</span></span><span style=display:flex><span>    name<span style=color:#ff79c6>:</span> <span style=color:#f1fa8c>&#34;Heavy Bolter Turret&#34;</span>,
+</span></span><span style=display:flex><span>    fireArc<span style=color:#ff79c6>:</span> [<span style=color:#f1fa8c>&#34;LEFT_SIDE&#34;</span>],
+</span></span><span style=display:flex><span>    firePower<span style=color:#ff79c6>:</span> [<span style=color:#bd93f9>6</span>, <span style=color:#bd93f9>2</span>, <span style=color:#bd93f9>0</span>],
+</span></span><span style=display:flex><span>    damage<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>5</span>,
+</span></span><span style=display:flex><span>    ammonition<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>160</span>,
+</span></span><span style=display:flex><span>    specials<span style=color:#ff79c6>:</span> [],
+</span></span><span style=display:flex><span>  };
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#8be9fd;font-style:italic>function</span> createHellstrikeMissleLauncher() {
+</span></span><span style=display:flex><span>  <span style=color:#ff79c6>return</span> {
+</span></span><span style=display:flex><span>    name<span style=color:#ff79c6>:</span> <span style=color:#f1fa8c>&#34;Hellstrike Missle Launcher&#34;</span>,
+</span></span><span style=display:flex><span>    fireArc<span style=color:#ff79c6>:</span> [<span style=color:#f1fa8c>&#34;FRONT&#34;</span>],
+</span></span><span style=display:flex><span>    firePower<span style=color:#ff79c6>:</span> [<span style=color:#bd93f9>2</span>, <span style=color:#bd93f9>2</span>, <span style=color:#bd93f9>2</span>],
+</span></span><span style=display:flex><span>    damage<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>3</span>,
+</span></span><span style=display:flex><span>    ammonition<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>3</span>,
+</span></span><span style=display:flex><span>    specials<span style=color:#ff79c6>:</span> [
+</span></span><span style=display:flex><span>      {
+</span></span><span style=display:flex><span>        keyword<span style=color:#ff79c6>:</span> <span style=color:#f1fa8c>&#34;GROUND_ATTACK&#34;</span>,
+</span></span><span style=display:flex><span>        value<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>0</span>,
+</span></span><span style=display:flex><span>      },
+</span></span><span style=display:flex><span>      {
+</span></span><span style=display:flex><span>        keyword<span style=color:#ff79c6>:</span> <span style=color:#f1fa8c>&#34;EXTRA_DAMAGE&#34;</span>,
+</span></span><span style=display:flex><span>        value<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>6</span>,
+</span></span><span style=display:flex><span>      },
+</span></span><span style=display:flex><span>    ],
+</span></span><span style=display:flex><span>  };
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#8be9fd;font-style:italic>function</span> createQuadLascannon() {
+</span></span><span style=display:flex><span>  <span style=color:#ff79c6>return</span> {
+</span></span><span style=display:flex><span>    name<span style=color:#ff79c6>:</span> <span style=color:#f1fa8c>&#34;Quad Lascannon&#34;</span>,
+</span></span><span style=display:flex><span>    fireArc<span style=color:#ff79c6>:</span> [<span style=color:#f1fa8c>&#34;FRONT&#34;</span>],
+</span></span><span style=display:flex><span>    firePower<span style=color:#ff79c6>:</span> [<span style=color:#bd93f9>0</span>, <span style=color:#bd93f9>4</span>, <span style=color:#bd93f9>2</span>],
+</span></span><span style=display:flex><span>    damage<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>2</span>,
+</span></span><span style=display:flex><span>    ammonition<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>160</span>,
+</span></span><span style=display:flex><span>    specials<span style=color:#ff79c6>:</span> [
+</span></span><span style=display:flex><span>      {
+</span></span><span style=display:flex><span>        keyword<span style=color:#ff79c6>:</span> <span style=color:#f1fa8c>&#34;EXTRA_DAMAGE&#34;</span>,
+</span></span><span style=display:flex><span>        value<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>6</span>,
+</span></span><span style=display:flex><span>      },
+</span></span><span style=display:flex><span>    ],
+</span></span><span style=display:flex><span>  };
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#8be9fd;font-style:italic>function</span> createTwinHeavyBolters() {
+</span></span><span style=display:flex><span>  <span style=color:#ff79c6>return</span> {
+</span></span><span style=display:flex><span>    name<span style=color:#ff79c6>:</span> <span style=color:#f1fa8c>&#34;Twin Heavy Bolters&#34;</span>,
+</span></span><span style=display:flex><span>    fireArc<span style=color:#ff79c6>:</span> [<span style=color:#f1fa8c>&#34;FRONT&#34;</span>],
+</span></span><span style=display:flex><span>    firePower<span style=color:#ff79c6>:</span> [<span style=color:#bd93f9>3</span>, <span style=color:#bd93f9>1</span>, <span style=color:#bd93f9>0</span>],
+</span></span><span style=display:flex><span>    damage<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>5</span>,
+</span></span><span style=display:flex><span>    ammonition<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>160</span>,
+</span></span><span style=display:flex><span>    specials<span style=color:#ff79c6>:</span> [],
+</span></span><span style=display:flex><span>  };
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#8be9fd;font-style:italic>function</span> createDualFragMisslePods() {
+</span></span><span style=display:flex><span>  <span style=color:#ff79c6>return</span> {
+</span></span><span style=display:flex><span>    name<span style=color:#ff79c6>:</span> <span style=color:#f1fa8c>&#34;Dual Frag Missle Pods&#34;</span>,
+</span></span><span style=display:flex><span>    fireArc<span style=color:#ff79c6>:</span> [<span style=color:#f1fa8c>&#34;FRONT&#34;</span>],
+</span></span><span style=display:flex><span>    firePower<span style=color:#ff79c6>:</span> [<span style=color:#bd93f9>3</span>, <span style=color:#bd93f9>3</span>, <span style=color:#bd93f9>1</span>],
+</span></span><span style=display:flex><span>    damage<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>5</span>,
+</span></span><span style=display:flex><span>    ammonition<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>160</span>,
+</span></span><span style=display:flex><span>    specials<span style=color:#ff79c6>:</span> [],
+</span></span><span style=display:flex><span>  };
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#8be9fd;font-style:italic>function</span> createRotaryFragMissleLauncher() {
+</span></span><span style=display:flex><span>  <span style=color:#ff79c6>return</span> {
+</span></span><span style=display:flex><span>    name<span style=color:#ff79c6>:</span> <span style=color:#f1fa8c>&#34;Rotary Frag Missle Launcher&#34;</span>,
+</span></span><span style=display:flex><span>    fireArc<span style=color:#ff79c6>:</span> [<span style=color:#f1fa8c>&#34;FRONT&#34;</span>],
+</span></span><span style=display:flex><span>    firePower<span style=color:#ff79c6>:</span> [<span style=color:#bd93f9>2</span>, <span style=color:#bd93f9>2</span>, <span style=color:#bd93f9>1</span>],
+</span></span><span style=display:flex><span>    damage<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>5</span>,
+</span></span><span style=display:flex><span>    ammonition<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>160</span>,
+</span></span><span style=display:flex><span>    specials<span style=color:#ff79c6>:</span> [],
+</span></span><span style=display:flex><span>  };
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#8be9fd;font-style:italic>function</span> createTurboLaserDestructor() {
+</span></span><span style=display:flex><span>  <span style=color:#ff79c6>return</span> {
+</span></span><span style=display:flex><span>    name<span style=color:#ff79c6>:</span> <span style=color:#f1fa8c>&#34;Turbo Laser Destructor&#34;</span>,
+</span></span><span style=display:flex><span>    fireArc<span style=color:#ff79c6>:</span> [<span style=color:#f1fa8c>&#34;FRONT&#34;</span>, <span style=color:#f1fa8c>&#34;UP&#34;</span>],
+</span></span><span style=display:flex><span>    firePower<span style=color:#ff79c6>:</span> [<span style=color:#bd93f9>2</span>, <span style=color:#bd93f9>2</span>, <span style=color:#bd93f9>3</span>],
+</span></span><span style=display:flex><span>    damage<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>2</span>,
+</span></span><span style=display:flex><span>    ammonition<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>160</span>,
+</span></span><span style=display:flex><span>    specials<span style=color:#ff79c6>:</span> [
+</span></span><span style=display:flex><span>      {
+</span></span><span style=display:flex><span>        keyword<span style=color:#ff79c6>:</span> <span style=color:#f1fa8c>&#34;EXTRA_DAMAGE&#34;</span>,
+</span></span><span style=display:flex><span>        value<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>4</span>,
+</span></span><span style=display:flex><span>      },
+</span></span><span style=display:flex><span>    ],
+</span></span><span style=display:flex><span>  };
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#8be9fd;font-style:italic>function</span> createTwinLascannon() {
+</span></span><span style=display:flex><span>  <span style=color:#ff79c6>return</span> {
+</span></span><span style=display:flex><span>    name<span style=color:#ff79c6>:</span> <span style=color:#f1fa8c>&#34;Twin Lascannon&#34;</span>,
+</span></span><span style=display:flex><span>    fireArc<span style=color:#ff79c6>:</span> [<span style=color:#f1fa8c>&#34;FRONT&#34;</span>],
+</span></span><span style=display:flex><span>    firePower<span style=color:#ff79c6>:</span> [<span style=color:#bd93f9>0</span>, <span style=color:#bd93f9>2</span>, <span style=color:#bd93f9>1</span>],
+</span></span><span style=display:flex><span>    damage<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>2</span>,
+</span></span><span style=display:flex><span>    ammonition<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>160</span>,
+</span></span><span style=display:flex><span>    specials<span style=color:#ff79c6>:</span> [
+</span></span><span style=display:flex><span>      {
+</span></span><span style=display:flex><span>        keyword<span style=color:#ff79c6>:</span> <span style=color:#f1fa8c>&#34;EXTRA_DAMAGE&#34;</span>,
+</span></span><span style=display:flex><span>        value<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>6</span>,
+</span></span><span style=display:flex><span>      },
+</span></span><span style=display:flex><span>    ],
+</span></span><span style=display:flex><span>  };
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#8be9fd;font-style:italic>function</span> createHeavyBolterStarboardTurret() {
+</span></span><span style=display:flex><span>  <span style=color:#ff79c6>return</span> {
+</span></span><span style=display:flex><span>    name<span style=color:#ff79c6>:</span> <span style=color:#f1fa8c>&#34;Heavy Bolter Turret&#34;</span>,
+</span></span><span style=display:flex><span>    fireArc<span style=color:#ff79c6>:</span> [<span style=color:#f1fa8c>&#34;RIGHT_SIDE&#34;</span>, <span style=color:#f1fa8c>&#34;FRONT&#34;</span>],
+</span></span><span style=display:flex><span>    firePower<span style=color:#ff79c6>:</span> [<span style=color:#bd93f9>4</span>, <span style=color:#bd93f9>1</span>, <span style=color:#bd93f9>0</span>],
+</span></span><span style=display:flex><span>    damage<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>5</span>,
+</span></span><span style=display:flex><span>    ammonition<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>160</span>,
+</span></span><span style=display:flex><span>    specials<span style=color:#ff79c6>:</span> [],
+</span></span><span style=display:flex><span>  };
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#8be9fd;font-style:italic>function</span> createHeavyBolterPortWing() {
+</span></span><span style=display:flex><span>  <span style=color:#ff79c6>return</span> {
+</span></span><span style=display:flex><span>    name<span style=color:#ff79c6>:</span> <span style=color:#f1fa8c>&#34;Heavy Bolter Turret&#34;</span>,
+</span></span><span style=display:flex><span>    fireArc<span style=color:#ff79c6>:</span> [<span style=color:#f1fa8c>&#34;ALL_ROUND&#34;</span>, <span style=color:#f1fa8c>&#34;DOWN&#34;</span>],
+</span></span><span style=display:flex><span>    firePower<span style=color:#ff79c6>:</span> [<span style=color:#bd93f9>4</span>, <span style=color:#bd93f9>1</span>, <span style=color:#bd93f9>0</span>],
+</span></span><span style=display:flex><span>    damage<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>5</span>,
+</span></span><span style=display:flex><span>    ammonition<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>160</span>,
+</span></span><span style=display:flex><span>    specials<span style=color:#ff79c6>:</span> [],
+</span></span><span style=display:flex><span>  };
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#8be9fd;font-style:italic>function</span> createHeavyBolterStarboardWing() {
+</span></span><span style=display:flex><span>  <span style=color:#ff79c6>return</span> {
+</span></span><span style=display:flex><span>    name<span style=color:#ff79c6>:</span> <span style=color:#f1fa8c>&#34;Heavy Bolter Turret&#34;</span>,
+</span></span><span style=display:flex><span>    fireArc<span style=color:#ff79c6>:</span> [<span style=color:#f1fa8c>&#34;ALL_ROUND&#34;</span>, <span style=color:#f1fa8c>&#34;DOWN&#34;</span>],
+</span></span><span style=display:flex><span>    firePower<span style=color:#ff79c6>:</span> [<span style=color:#bd93f9>4</span>, <span style=color:#bd93f9>1</span>, <span style=color:#bd93f9>0</span>],
+</span></span><span style=display:flex><span>    damage<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>5</span>,
+</span></span><span style=display:flex><span>    ammonition<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>160</span>,
+</span></span><span style=display:flex><span>    specials<span style=color:#ff79c6>:</span> [],
+</span></span><span style=display:flex><span>  };
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#8be9fd;font-style:italic>function</span> createTwinBrightLances() {
+</span></span><span style=display:flex><span>  <span style=color:#ff79c6>return</span> {
+</span></span><span style=display:flex><span>    name<span style=color:#ff79c6>:</span> <span style=color:#f1fa8c>&#34;Bright Lance&#34;</span>,
+</span></span><span style=display:flex><span>    fireArc<span style=color:#ff79c6>:</span> [<span style=color:#f1fa8c>&#34;FRONT&#34;</span>],
+</span></span><span style=display:flex><span>    firePower<span style=color:#ff79c6>:</span> [<span style=color:#bd93f9>1</span>, <span style=color:#bd93f9>2</span>, <span style=color:#bd93f9>2</span>],
+</span></span><span style=display:flex><span>    damage<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>2</span>,
+</span></span><span style=display:flex><span>    ammonition<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>160</span>,
+</span></span><span style=display:flex><span>    specials<span style=color:#ff79c6>:</span> [
+</span></span><span style=display:flex><span>      {
+</span></span><span style=display:flex><span>        keyword<span style=color:#ff79c6>:</span> <span style=color:#f1fa8c>&#34;EXTRA_DAMAGE&#34;</span>,
+</span></span><span style=display:flex><span>        value<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>4</span>,
+</span></span><span style=display:flex><span>      },
+</span></span><span style=display:flex><span>    ],
+</span></span><span style=display:flex><span>  };
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#8be9fd;font-style:italic>function</span> createTwinScatterLaser() {
+</span></span><span style=display:flex><span>  <span style=color:#ff79c6>return</span> {
+</span></span><span style=display:flex><span>    name<span style=color:#ff79c6>:</span> <span style=color:#f1fa8c>&#34;Scatter Laser&#34;</span>,
+</span></span><span style=display:flex><span>    fireArc<span style=color:#ff79c6>:</span> [<span style=color:#f1fa8c>&#34;FRONT&#34;</span>],
+</span></span><span style=display:flex><span>    firePower<span style=color:#ff79c6>:</span> [<span style=color:#bd93f9>6</span>, <span style=color:#bd93f9>4</span>, <span style=color:#bd93f9>0</span>],
+</span></span><span style=display:flex><span>    damage<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>4</span>,
+</span></span><span style=display:flex><span>    ammonition<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>160</span>,
+</span></span><span style=display:flex><span>    specials<span style=color:#ff79c6>:</span> [
+</span></span><span style=display:flex><span>      {
+</span></span><span style=display:flex><span>        keyword<span style=color:#ff79c6>:</span> <span style=color:#f1fa8c>&#34;AERIAL_ATTACK&#34;</span>,
+</span></span><span style=display:flex><span>        value<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>0</span>,
+</span></span><span style=display:flex><span>      },
+</span></span><span style=display:flex><span>    ],
+</span></span><span style=display:flex><span>  };
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#8be9fd;font-style:italic>function</span> createTwinStarcannon() {
+</span></span><span style=display:flex><span>  <span style=color:#ff79c6>return</span> {
+</span></span><span style=display:flex><span>    name<span style=color:#ff79c6>:</span> <span style=color:#f1fa8c>&#34;Starcannon&#34;</span>,
+</span></span><span style=display:flex><span>    fireArc<span style=color:#ff79c6>:</span> [<span style=color:#f1fa8c>&#34;FRONT&#34;</span>],
+</span></span><span style=display:flex><span>    firePower<span style=color:#ff79c6>:</span> [<span style=color:#bd93f9>3</span>, <span style=color:#bd93f9>2</span>, <span style=color:#bd93f9>1</span>],
+</span></span><span style=display:flex><span>    damage<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>3</span>,
+</span></span><span style=display:flex><span>    ammonition<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>160</span>,
+</span></span><span style=display:flex><span>    specials<span style=color:#ff79c6>:</span> [
+</span></span><span style=display:flex><span>      {
+</span></span><span style=display:flex><span>        keyword<span style=color:#ff79c6>:</span> <span style=color:#f1fa8c>&#34;AERIAL_ATTACK&#34;</span>,
+</span></span><span style=display:flex><span>        value<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>0</span>,
+</span></span><span style=display:flex><span>      },
+</span></span><span style=display:flex><span>    ],
+</span></span><span style=display:flex><span>  };
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#8be9fd;font-style:italic>function</span> createShurikenCannon() {
+</span></span><span style=display:flex><span>  <span style=color:#ff79c6>return</span> {
+</span></span><span style=display:flex><span>    name<span style=color:#ff79c6>:</span> <span style=color:#f1fa8c>&#34;Shurikencannon&#34;</span>,
+</span></span><span style=display:flex><span>    fireArc<span style=color:#ff79c6>:</span> [<span style=color:#f1fa8c>&#34;FRONT&#34;</span>],
+</span></span><span style=display:flex><span>    firePower<span style=color:#ff79c6>:</span> [<span style=color:#bd93f9>8</span>, <span style=color:#bd93f9>4</span>, <span style=color:#bd93f9>0</span>],
+</span></span><span style=display:flex><span>    damage<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>4</span>,
+</span></span><span style=display:flex><span>    ammonition<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>160</span>,
+</span></span><span style=display:flex><span>    specials<span style=color:#ff79c6>:</span> [
+</span></span><span style=display:flex><span>      {
+</span></span><span style=display:flex><span>        keyword<span style=color:#ff79c6>:</span> <span style=color:#f1fa8c>&#34;EXTRA_DAMAGE&#34;</span>,
+</span></span><span style=display:flex><span>        value<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>5</span>,
+</span></span><span style=display:flex><span>      },
+</span></span><span style=display:flex><span>    ],
+</span></span><span style=display:flex><span>  };
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#8be9fd;font-style:italic>function</span> createNightfirePlasmaMissileArray() {
+</span></span><span style=display:flex><span>  <span style=color:#ff79c6>return</span> {
+</span></span><span style=display:flex><span>    name<span style=color:#ff79c6>:</span> <span style=color:#f1fa8c>&#34;Nightfire Plasma Missile Array&#34;</span>,
+</span></span><span style=display:flex><span>    fireArc<span style=color:#ff79c6>:</span> [<span style=color:#f1fa8c>&#34;FRONT&#34;</span>],
+</span></span><span style=display:flex><span>    firePower<span style=color:#ff79c6>:</span> [<span style=color:#bd93f9>2</span>, <span style=color:#bd93f9>2</span>, <span style=color:#bd93f9>2</span>],
+</span></span><span style=display:flex><span>    damage<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>3</span>,
+</span></span><span style=display:flex><span>    ammonition<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>2</span>,
+</span></span><span style=display:flex><span>    specials<span style=color:#ff79c6>:</span> [
+</span></span><span style=display:flex><span>      {
+</span></span><span style=display:flex><span>        keyword<span style=color:#ff79c6>:</span> <span style=color:#f1fa8c>&#34;EXTRA_DAMAGE&#34;</span>,
+</span></span><span style=display:flex><span>        value<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>5</span>,
+</span></span><span style=display:flex><span>      },
+</span></span><span style=display:flex><span>      {
+</span></span><span style=display:flex><span>        keyword<span style=color:#ff79c6>:</span> <span style=color:#f1fa8c>&#34;AERIAL_ATTACK&#34;</span>,
+</span></span><span style=display:flex><span>        value<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>0</span>,
+</span></span><span style=display:flex><span>      },
+</span></span><span style=display:flex><span>    ],
+</span></span><span style=display:flex><span>  };
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#8be9fd;font-style:italic>function</span> createNightfireKrakMissileArray() {
+</span></span><span style=display:flex><span>  <span style=color:#ff79c6>return</span> {
+</span></span><span style=display:flex><span>    name<span style=color:#ff79c6>:</span> <span style=color:#f1fa8c>&#34;Nightfire Krak Missile Array&#34;</span>,
+</span></span><span style=display:flex><span>    fireArc<span style=color:#ff79c6>:</span> [<span style=color:#f1fa8c>&#34;FRONT&#34;</span>],
+</span></span><span style=display:flex><span>    firePower<span style=color:#ff79c6>:</span> [<span style=color:#bd93f9>2</span>, <span style=color:#bd93f9>2</span>, <span style=color:#bd93f9>2</span>],
+</span></span><span style=display:flex><span>    damage<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>3</span>,
+</span></span><span style=display:flex><span>    ammonition<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>2</span>,
+</span></span><span style=display:flex><span>    specials<span style=color:#ff79c6>:</span> [
+</span></span><span style=display:flex><span>      {
+</span></span><span style=display:flex><span>        keyword<span style=color:#ff79c6>:</span> <span style=color:#f1fa8c>&#34;EXTRA_DAMAGE&#34;</span>,
+</span></span><span style=display:flex><span>        value<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>5</span>,
+</span></span><span style=display:flex><span>      },
+</span></span><span style=display:flex><span>      {
+</span></span><span style=display:flex><span>        keyword<span style=color:#ff79c6>:</span> <span style=color:#f1fa8c>&#34;GROUND_ATTACK&#34;</span>,
+</span></span><span style=display:flex><span>        value<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>0</span>,
+</span></span><span style=display:flex><span>      },
+</span></span><span style=display:flex><span>    ],
+</span></span><span style=display:flex><span>  };
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#8be9fd;font-style:italic>function</span> createTwinPulseLasers() {
+</span></span><span style=display:flex><span>  <span style=color:#ff79c6>return</span> {
+</span></span><span style=display:flex><span>    name<span style=color:#ff79c6>:</span> <span style=color:#f1fa8c>&#34;Pulse Laser&#34;</span>,
+</span></span><span style=display:flex><span>    fireArc<span style=color:#ff79c6>:</span> [<span style=color:#f1fa8c>&#34;FRONT&#34;</span>],
+</span></span><span style=display:flex><span>    firePower<span style=color:#ff79c6>:</span> [<span style=color:#bd93f9>2</span>, <span style=color:#bd93f9>3</span>, <span style=color:#bd93f9>2</span>],
+</span></span><span style=display:flex><span>    damage<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>3</span>,
+</span></span><span style=display:flex><span>    ammonition<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>160</span>,
+</span></span><span style=display:flex><span>    specials<span style=color:#ff79c6>:</span> [
+</span></span><span style=display:flex><span>      {
+</span></span><span style=display:flex><span>        keyword<span style=color:#ff79c6>:</span> <span style=color:#f1fa8c>&#34;AERIAL_ATTACK&#34;</span>,
+</span></span><span style=display:flex><span>        value<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>0</span>,
+</span></span><span style=display:flex><span>      },
+</span></span><span style=display:flex><span>    ],
+</span></span><span style=display:flex><span>  };
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#8be9fd;font-style:italic>function</span> createMissileArray() {
+</span></span><span style=display:flex><span>  <span style=color:#ff79c6>return</span> {
+</span></span><span style=display:flex><span>    name<span style=color:#ff79c6>:</span> <span style=color:#f1fa8c>&#34;Missile Array&#34;</span>,
+</span></span><span style=display:flex><span>    fireArc<span style=color:#ff79c6>:</span> [<span style=color:#f1fa8c>&#34;FRONT&#34;</span>],
+</span></span><span style=display:flex><span>    firePower<span style=color:#ff79c6>:</span> [<span style=color:#bd93f9>3</span>, <span style=color:#bd93f9>2</span>, <span style=color:#bd93f9>0</span>],
+</span></span><span style=display:flex><span>    damage<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>4</span>,
+</span></span><span style=display:flex><span>    ammonition<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>160</span>,
+</span></span><span style=display:flex><span>    specials<span style=color:#ff79c6>:</span> [],
+</span></span><span style=display:flex><span>  };
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#8be9fd;font-style:italic>function</span> createBombRack() {
+</span></span><span style=display:flex><span>  <span style=color:#ff79c6>return</span> {
+</span></span><span style=display:flex><span>    name<span style=color:#ff79c6>:</span> <span style=color:#f1fa8c>&#34;Bomb Rack&#34;</span>,
+</span></span><span style=display:flex><span>    fireArc<span style=color:#ff79c6>:</span> [<span style=color:#f1fa8c>&#34;REAR&#34;</span>],
+</span></span><span style=display:flex><span>    firePower<span style=color:#ff79c6>:</span> [<span style=color:#bd93f9>4</span>, <span style=color:#bd93f9>0</span>, <span style=color:#bd93f9>0</span>],
+</span></span><span style=display:flex><span>    damage<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>2</span>,
+</span></span><span style=display:flex><span>    ammonition<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>3</span>,
+</span></span><span style=display:flex><span>    specials<span style=color:#ff79c6>:</span> [
+</span></span><span style=display:flex><span>      {
+</span></span><span style=display:flex><span>        keyword<span style=color:#ff79c6>:</span> <span style=color:#f1fa8c>&#34;EXTRA_DAMAGE&#34;</span>,
+</span></span><span style=display:flex><span>        value<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>5</span>,
+</span></span><span style=display:flex><span>      },
+</span></span><span style=display:flex><span>      {
+</span></span><span style=display:flex><span>        keyword<span style=color:#ff79c6>:</span> <span style=color:#f1fa8c>&#34;GROUND_ATTACK&#34;</span>,
+</span></span><span style=display:flex><span>        value<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>0</span>,
+</span></span><span style=display:flex><span>      },
+</span></span><span style=display:flex><span>    ],
+</span></span><span style=display:flex><span>  };
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#8be9fd;font-style:italic>function</span> createTwinLinkedShurikenCannon() {
+</span></span><span style=display:flex><span>  <span style=color:#ff79c6>return</span> {
+</span></span><span style=display:flex><span>    name<span style=color:#ff79c6>:</span> <span style=color:#f1fa8c>&#34;Heavy Shuriken Cannon&#34;</span>,
+</span></span><span style=display:flex><span>    fireArc<span style=color:#ff79c6>:</span> [<span style=color:#f1fa8c>&#34;FRONT&#34;</span>],
+</span></span><span style=display:flex><span>    firePower<span style=color:#ff79c6>:</span> [<span style=color:#bd93f9>10</span>, <span style=color:#bd93f9>6</span>, <span style=color:#bd93f9>0</span>],
+</span></span><span style=display:flex><span>    damage<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>4</span>,
+</span></span><span style=display:flex><span>    ammonition<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>160</span>,
+</span></span><span style=display:flex><span>    specials<span style=color:#ff79c6>:</span> [],
+</span></span><span style=display:flex><span>  };
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#8be9fd;font-style:italic>function</span> createNoseMountedScatterLaser() {
+</span></span><span style=display:flex><span>  <span style=color:#ff79c6>return</span> {
+</span></span><span style=display:flex><span>    name<span style=color:#ff79c6>:</span> <span style=color:#f1fa8c>&#34;Nose mounted Scatter Laser&#34;</span>,
+</span></span><span style=display:flex><span>    fireArc<span style=color:#ff79c6>:</span> [<span style=color:#f1fa8c>&#34;FRONT&#34;</span>],
+</span></span><span style=display:flex><span>    firePower<span style=color:#ff79c6>:</span> [<span style=color:#bd93f9>4</span>, <span style=color:#bd93f9>2</span>, <span style=color:#bd93f9>0</span>],
+</span></span><span style=display:flex><span>    damage<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>4</span>,
+</span></span><span style=display:flex><span>    ammonition<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>160</span>,
+</span></span><span style=display:flex><span>    specials<span style=color:#ff79c6>:</span> [
+</span></span><span style=display:flex><span>      {
+</span></span><span style=display:flex><span>        keyword<span style=color:#ff79c6>:</span> <span style=color:#f1fa8c>&#34;AERIAL_ATTACK&#34;</span>,
+</span></span><span style=display:flex><span>        value<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>0</span>,
+</span></span><span style=display:flex><span>      },
+</span></span><span style=display:flex><span>    ],
+</span></span><span style=display:flex><span>  };
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#8be9fd;font-style:italic>function</span> createTwinLinkedPulseLasers() {
+</span></span><span style=display:flex><span>  <span style=color:#ff79c6>return</span> {
+</span></span><span style=display:flex><span>    name<span style=color:#ff79c6>:</span> <span style=color:#f1fa8c>&#34;Twin Linked Pulse Laser&#34;</span>,
+</span></span><span style=display:flex><span>    fireArc<span style=color:#ff79c6>:</span> [<span style=color:#f1fa8c>&#34;FRONT&#34;</span>],
+</span></span><span style=display:flex><span>    firePower<span style=color:#ff79c6>:</span> [<span style=color:#bd93f9>4</span>, <span style=color:#bd93f9>6</span>, <span style=color:#bd93f9>2</span>],
+</span></span><span style=display:flex><span>    damage<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>3</span>,
+</span></span><span style=display:flex><span>    ammonition<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>160</span>,
+</span></span><span style=display:flex><span>    specials<span style=color:#ff79c6>:</span> [
+</span></span><span style=display:flex><span>      {
+</span></span><span style=display:flex><span>        keyword<span style=color:#ff79c6>:</span> <span style=color:#f1fa8c>&#34;AERIAL_ATTACK&#34;</span>,
+</span></span><span style=display:flex><span>        value<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>0</span>,
+</span></span><span style=display:flex><span>      },
+</span></span><span style=display:flex><span>    ],
+</span></span><span style=display:flex><span>  };
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#8be9fd;font-style:italic>function</span> createTwinLinkedPulsar() {
+</span></span><span style=display:flex><span>  <span style=color:#ff79c6>return</span> {
+</span></span><span style=display:flex><span>    name<span style=color:#ff79c6>:</span> <span style=color:#f1fa8c>&#34;Twin Linked Pulsar&#34;</span>,
+</span></span><span style=display:flex><span>    fireArc<span style=color:#ff79c6>:</span> [<span style=color:#f1fa8c>&#34;FRONT&#34;</span>],
+</span></span><span style=display:flex><span>    firePower<span style=color:#ff79c6>:</span> [<span style=color:#bd93f9>2</span>, <span style=color:#bd93f9>4</span>, <span style=color:#bd93f9>4</span>],
+</span></span><span style=display:flex><span>    damage<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>2</span>,
+</span></span><span style=display:flex><span>    ammonition<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>160</span>,
+</span></span><span style=display:flex><span>    specials<span style=color:#ff79c6>:</span> [
+</span></span><span style=display:flex><span>      {
+</span></span><span style=display:flex><span>        keyword<span style=color:#ff79c6>:</span> <span style=color:#f1fa8c>&#34;EXTRA_DAMAGE&#34;</span>,
+</span></span><span style=display:flex><span>        value<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>5</span>,
+</span></span><span style=display:flex><span>      },
+</span></span><span style=display:flex><span>    ],
+</span></span><span style=display:flex><span>  };
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#8be9fd;font-style:italic>function</span> createHeavyDScythe() {
+</span></span><span style=display:flex><span>  <span style=color:#ff79c6>return</span> {
+</span></span><span style=display:flex><span>    name<span style=color:#ff79c6>:</span> <span style=color:#f1fa8c>&#34;Heavy DScythe&#34;</span>,
+</span></span><span style=display:flex><span>    fireArc<span style=color:#ff79c6>:</span> [<span style=color:#f1fa8c>&#34;FRONT&#34;</span>],
+</span></span><span style=display:flex><span>    firePower<span style=color:#ff79c6>:</span> [<span style=color:#bd93f9>3</span>, <span style=color:#bd93f9>3</span>, <span style=color:#bd93f9>0</span>],
+</span></span><span style=display:flex><span>    damage<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>2</span>,
+</span></span><span style=display:flex><span>    ammonition<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>160</span>,
+</span></span><span style=display:flex><span>    specials<span style=color:#ff79c6>:</span> [
+</span></span><span style=display:flex><span>      {
+</span></span><span style=display:flex><span>        keyword<span style=color:#ff79c6>:</span> <span style=color:#f1fa8c>&#34;EXTRA_DAMAGE&#34;</span>,
+</span></span><span style=display:flex><span>        value<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>3</span>,
+</span></span><span style=display:flex><span>      },
+</span></span><span style=display:flex><span>    ],
+</span></span><span style=display:flex><span>  };
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#8be9fd;font-style:italic>function</span> createQuadBigShootas() {
+</span></span><span style=display:flex><span>  <span style=color:#ff79c6>return</span> {
+</span></span><span style=display:flex><span>    name<span style=color:#ff79c6>:</span> <span style=color:#f1fa8c>&#34;Quad Big Shoota&#34;</span>,
+</span></span><span style=display:flex><span>    fireArc<span style=color:#ff79c6>:</span> [<span style=color:#f1fa8c>&#34;FRONT&#34;</span>],
+</span></span><span style=display:flex><span>    firePower<span style=color:#ff79c6>:</span> [<span style=color:#bd93f9>8</span>, <span style=color:#bd93f9>4</span>, <span style=color:#bd93f9>0</span>],
+</span></span><span style=display:flex><span>    damage<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>5</span>,
+</span></span><span style=display:flex><span>    ammonition<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>160</span>,
+</span></span><span style=display:flex><span>    specials<span style=color:#ff79c6>:</span> [],
+</span></span><span style=display:flex><span>  };
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#8be9fd;font-style:italic>function</span> createPortShootaTurret() {
+</span></span><span style=display:flex><span>  <span style=color:#ff79c6>return</span> {
+</span></span><span style=display:flex><span>    name<span style=color:#ff79c6>:</span> <span style=color:#f1fa8c>&#34;Shoota Turret&#34;</span>,
+</span></span><span style=display:flex><span>    fireArc<span style=color:#ff79c6>:</span> [<span style=color:#f1fa8c>&#34;LEFT_SIDE, UP&#34;</span>],
+</span></span><span style=display:flex><span>    firePower<span style=color:#ff79c6>:</span> [<span style=color:#bd93f9>2</span>, <span style=color:#bd93f9>1</span>, <span style=color:#bd93f9>0</span>],
+</span></span><span style=display:flex><span>    damage<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>5</span>,
+</span></span><span style=display:flex><span>    ammonition<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>160</span>,
+</span></span><span style=display:flex><span>    specials<span style=color:#ff79c6>:</span> [],
+</span></span><span style=display:flex><span>  };
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#8be9fd;font-style:italic>function</span> createStarboardShootaTurret() {
+</span></span><span style=display:flex><span>  <span style=color:#ff79c6>return</span> {
+</span></span><span style=display:flex><span>    name<span style=color:#ff79c6>:</span> <span style=color:#f1fa8c>&#34;Shoota Turret&#34;</span>,
+</span></span><span style=display:flex><span>    fireArc<span style=color:#ff79c6>:</span> [<span style=color:#f1fa8c>&#34;RIGHT_SIDE, UP&#34;</span>],
+</span></span><span style=display:flex><span>    firePower<span style=color:#ff79c6>:</span> [<span style=color:#bd93f9>2</span>, <span style=color:#bd93f9>1</span>, <span style=color:#bd93f9>0</span>],
+</span></span><span style=display:flex><span>    damage<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>5</span>,
+</span></span><span style=display:flex><span>    ammonition<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>160</span>,
+</span></span><span style=display:flex><span>    specials<span style=color:#ff79c6>:</span> [],
+</span></span><span style=display:flex><span>  };
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#8be9fd;font-style:italic>function</span> createGrotBomms() {
+</span></span><span style=display:flex><span>  <span style=color:#ff79c6>return</span> {
+</span></span><span style=display:flex><span>    name<span style=color:#ff79c6>:</span> <span style=color:#f1fa8c>&#34;Grot Bomms&#34;</span>,
+</span></span><span style=display:flex><span>    fireArc<span style=color:#ff79c6>:</span> [<span style=color:#f1fa8c>&#34;LEFT_SIDE&#34;</span>, <span style=color:#f1fa8c>&#34;RIDE_SIDE&#34;</span>, <span style=color:#f1fa8c>&#34;UP&#34;</span>, <span style=color:#f1fa8c>&#34;FRONT&#34;</span>],
+</span></span><span style=display:flex><span>    firePower<span style=color:#ff79c6>:</span> [<span style=color:#bd93f9>0</span>, <span style=color:#bd93f9>0</span>, <span style=color:#bd93f9>0</span>],
+</span></span><span style=display:flex><span>    damage<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>2</span>,
+</span></span><span style=display:flex><span>    ammonition<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>160</span>,
+</span></span><span style=display:flex><span>    specials<span style=color:#ff79c6>:</span> [
+</span></span><span style=display:flex><span>      {
+</span></span><span style=display:flex><span>        keyword<span style=color:#ff79c6>:</span> <span style=color:#f1fa8c>&#34;AUTONOMOUS_WEAPON&#34;</span>,
+</span></span><span style=display:flex><span>        value<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>0</span>,
+</span></span><span style=display:flex><span>      },
+</span></span><span style=display:flex><span>      {
+</span></span><span style=display:flex><span>        keyword<span style=color:#ff79c6>:</span> <span style=color:#f1fa8c>&#34;EXTRA_DAMAGE&#34;</span>,
+</span></span><span style=display:flex><span>        value<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>4</span>,
+</span></span><span style=display:flex><span>      },
+</span></span><span style=display:flex><span>    ],
+</span></span><span style=display:flex><span>  };
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#8be9fd;font-style:italic>function</span> createBigShootaTurret() {
+</span></span><span style=display:flex><span>  <span style=color:#ff79c6>return</span> {
+</span></span><span style=display:flex><span>    name<span style=color:#ff79c6>:</span> <span style=color:#f1fa8c>&#34;Big Shoota Turret&#34;</span>,
+</span></span><span style=display:flex><span>    fireArc<span style=color:#ff79c6>:</span> [<span style=color:#f1fa8c>&#34;REAR&#34;</span>, <span style=color:#f1fa8c>&#34;RIGHT_SIDE&#34;</span>, <span style=color:#f1fa8c>&#34;LEFT_SIDE&#34;</span>, <span style=color:#f1fa8c>&#34;UP&#34;</span>],
+</span></span><span style=display:flex><span>    firePower<span style=color:#ff79c6>:</span> [<span style=color:#bd93f9>3</span>, <span style=color:#bd93f9>1</span>, <span style=color:#bd93f9>0</span>],
+</span></span><span style=display:flex><span>    damage<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>5</span>,
+</span></span><span style=display:flex><span>    ammonition<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>160</span>,
+</span></span><span style=display:flex><span>    specials<span style=color:#ff79c6>:</span> [
+</span></span><span style=display:flex><span>      {
+</span></span><span style=display:flex><span>        keyword<span style=color:#ff79c6>:</span> <span style=color:#f1fa8c>&#34;TAIL_GUNNER&#34;</span>,
+</span></span><span style=display:flex><span>        value<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>0</span>,
+</span></span><span style=display:flex><span>      },
+</span></span><span style=display:flex><span>      {
+</span></span><span style=display:flex><span>        keyword<span style=color:#ff79c6>:</span> <span style=color:#f1fa8c>&#34;AERIAL_ATTACK&#34;</span>,
+</span></span><span style=display:flex><span>        value<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>0</span>,
+</span></span><span style=display:flex><span>      },
+</span></span><span style=display:flex><span>    ],
+</span></span><span style=display:flex><span>  };
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#8be9fd;font-style:italic>function</span> createShootaTailGun() {
+</span></span><span style=display:flex><span>  <span style=color:#ff79c6>return</span> {
+</span></span><span style=display:flex><span>    name<span style=color:#ff79c6>:</span> <span style=color:#f1fa8c>&#34;Shoota Tail Gun&#34;</span>,
+</span></span><span style=display:flex><span>    fireArc<span style=color:#ff79c6>:</span> [<span style=color:#f1fa8c>&#34;REAR&#34;</span>],
+</span></span><span style=display:flex><span>    firePower<span style=color:#ff79c6>:</span> [<span style=color:#bd93f9>1</span>, <span style=color:#bd93f9>0</span>, <span style=color:#bd93f9>0</span>],
+</span></span><span style=display:flex><span>    damage<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>6</span>,
+</span></span><span style=display:flex><span>    ammonition<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>160</span>,
+</span></span><span style=display:flex><span>    specials<span style=color:#ff79c6>:</span> [
+</span></span><span style=display:flex><span>      {
+</span></span><span style=display:flex><span>        keyword<span style=color:#ff79c6>:</span> <span style=color:#f1fa8c>&#34;TAIL_GUNNER&#34;</span>,
+</span></span><span style=display:flex><span>        value<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>0</span>,
+</span></span><span style=display:flex><span>      },
+</span></span><span style=display:flex><span>      {
+</span></span><span style=display:flex><span>        keyword<span style=color:#ff79c6>:</span> <span style=color:#f1fa8c>&#34;AERIAL_ATTACK&#34;</span>,
+</span></span><span style=display:flex><span>        value<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>0</span>,
+</span></span><span style=display:flex><span>      },
+</span></span><span style=display:flex><span>    ],
+</span></span><span style=display:flex><span>  };
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#8be9fd;font-style:italic>function</span> createLascannon() {
+</span></span><span style=display:flex><span>  <span style=color:#ff79c6>return</span> {
+</span></span><span style=display:flex><span>    name<span style=color:#ff79c6>:</span> <span style=color:#f1fa8c>&#34;Lascannon&#34;</span>,
+</span></span><span style=display:flex><span>    fireArc<span style=color:#ff79c6>:</span> [<span style=color:#f1fa8c>&#34;FRONT&#34;</span>],
+</span></span><span style=display:flex><span>    firePower<span style=color:#ff79c6>:</span> [<span style=color:#bd93f9>0</span>, <span style=color:#bd93f9>2</span>, <span style=color:#bd93f9>1</span>],
+</span></span><span style=display:flex><span>    damage<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>2</span>,
+</span></span><span style=display:flex><span>    ammonition<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>160</span>,
+</span></span><span style=display:flex><span>    specials<span style=color:#ff79c6>:</span> [
+</span></span><span style=display:flex><span>      {
+</span></span><span style=display:flex><span>        keyword<span style=color:#ff79c6>:</span> <span style=color:#f1fa8c>&#34;EXTRA_DAMAGE&#34;</span>,
+</span></span><span style=display:flex><span>        value<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>6</span>,
+</span></span><span style=display:flex><span>      },
+</span></span><span style=display:flex><span>    ],
+</span></span><span style=display:flex><span>  };
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#8be9fd;font-style:italic>function</span> createDorsalBolterTurret() {
+</span></span><span style=display:flex><span>  <span style=color:#ff79c6>return</span> {
+</span></span><span style=display:flex><span>    name<span style=color:#ff79c6>:</span> <span style=color:#f1fa8c>&#34;Bolter Turret&#34;</span>,
+</span></span><span style=display:flex><span>    fireArc<span style=color:#ff79c6>:</span> [<span style=color:#f1fa8c>&#34;ALL_ROUND&#34;</span>, <span style=color:#f1fa8c>&#34;UP&#34;</span>],
+</span></span><span style=display:flex><span>    firePower<span style=color:#ff79c6>:</span> [<span style=color:#bd93f9>3</span>, <span style=color:#bd93f9>2</span>, <span style=color:#bd93f9>0</span>],
+</span></span><span style=display:flex><span>    damage<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>5</span>,
+</span></span><span style=display:flex><span>    ammonition<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>160</span>,
+</span></span><span style=display:flex><span>    specials<span style=color:#ff79c6>:</span> [
+</span></span><span style=display:flex><span>      {
+</span></span><span style=display:flex><span>        keyword<span style=color:#ff79c6>:</span> <span style=color:#f1fa8c>&#34;AERIAL_ATTACK&#34;</span>,
+</span></span><span style=display:flex><span>        value<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>0</span>,
+</span></span><span style=display:flex><span>      },
+</span></span><span style=display:flex><span>    ],
+</span></span><span style=display:flex><span>  };
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#8be9fd;font-style:italic>function</span> createRearBolterTurret() {
+</span></span><span style=display:flex><span>  <span style=color:#ff79c6>return</span> {
+</span></span><span style=display:flex><span>    name<span style=color:#ff79c6>:</span> <span style=color:#f1fa8c>&#34;Bolter Turret&#34;</span>,
+</span></span><span style=display:flex><span>    fireArc<span style=color:#ff79c6>:</span> [<span style=color:#f1fa8c>&#34;REAR&#34;</span>],
+</span></span><span style=display:flex><span>    firePower<span style=color:#ff79c6>:</span> [<span style=color:#bd93f9>3</span>, <span style=color:#bd93f9>2</span>, <span style=color:#bd93f9>0</span>],
+</span></span><span style=display:flex><span>    damage<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>5</span>,
+</span></span><span style=display:flex><span>    ammonition<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>160</span>,
+</span></span><span style=display:flex><span>    specials<span style=color:#ff79c6>:</span> [
+</span></span><span style=display:flex><span>      {
+</span></span><span style=display:flex><span>        keyword<span style=color:#ff79c6>:</span> <span style=color:#f1fa8c>&#34;TAIL_GUNNER&#34;</span>,
+</span></span><span style=display:flex><span>        value<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>0</span>,
+</span></span><span style=display:flex><span>      },
+</span></span><span style=display:flex><span>      {
+</span></span><span style=display:flex><span>        keyword<span style=color:#ff79c6>:</span> <span style=color:#f1fa8c>&#34;AERIAL_ATTACK&#34;</span>,
+</span></span><span style=display:flex><span>        value<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>0</span>,
+</span></span><span style=display:flex><span>      },
+</span></span><span style=display:flex><span>    ],
+</span></span><span style=display:flex><span>  };
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#8be9fd;font-style:italic>function</span> createBombBay() {
+</span></span><span style=display:flex><span>  <span style=color:#ff79c6>return</span> {
+</span></span><span style=display:flex><span>    name<span style=color:#ff79c6>:</span> <span style=color:#f1fa8c>&#34;Bomb bay&#34;</span>,
+</span></span><span style=display:flex><span>    fireArc<span style=color:#ff79c6>:</span> [<span style=color:#f1fa8c>&#34;REAR&#34;</span>],
+</span></span><span style=display:flex><span>    firePower<span style=color:#ff79c6>:</span> [<span style=color:#bd93f9>8</span>, <span style=color:#bd93f9>0</span>, <span style=color:#bd93f9>0</span>],
+</span></span><span style=display:flex><span>    damage<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>2</span>,
+</span></span><span style=display:flex><span>    ammonition<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>3</span>,
+</span></span><span style=display:flex><span>    specials<span style=color:#ff79c6>:</span> [
+</span></span><span style=display:flex><span>      {
+</span></span><span style=display:flex><span>        keyword<span style=color:#ff79c6>:</span> <span style=color:#f1fa8c>&#34;GROUND_ATTACK&#34;</span>,
+</span></span><span style=display:flex><span>        value<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>0</span>,
+</span></span><span style=display:flex><span>      },
+</span></span><span style=display:flex><span>      {
+</span></span><span style=display:flex><span>        keyword<span style=color:#ff79c6>:</span> <span style=color:#f1fa8c>&#34;EXTRA_DAMAGE&#34;</span>,
+</span></span><span style=display:flex><span>        value<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>5</span>,
+</span></span><span style=display:flex><span>      },
+</span></span><span style=display:flex><span>    ],
+</span></span><span style=display:flex><span>  };
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#8be9fd;font-style:italic>function</span> createHeavyStubber() {
+</span></span><span style=display:flex><span>  <span style=color:#ff79c6>return</span> {
+</span></span><span style=display:flex><span>    name<span style=color:#ff79c6>:</span> <span style=color:#f1fa8c>&#34;Heavy Stubber&#34;</span>,
+</span></span><span style=display:flex><span>    fireArc<span style=color:#ff79c6>:</span> [<span style=color:#f1fa8c>&#34;REAR&#34;</span>, <span style=color:#f1fa8c>&#34;UP&#34;</span>],
+</span></span><span style=display:flex><span>    firePower<span style=color:#ff79c6>:</span> [<span style=color:#bd93f9>1</span>, <span style=color:#bd93f9>1</span>, <span style=color:#bd93f9>0</span>],
+</span></span><span style=display:flex><span>    damage<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>5</span>,
+</span></span><span style=display:flex><span>    ammonition<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>160</span>,
+</span></span><span style=display:flex><span>    specials<span style=color:#ff79c6>:</span> [
+</span></span><span style=display:flex><span>      {
+</span></span><span style=display:flex><span>        keyword<span style=color:#ff79c6>:</span> <span style=color:#f1fa8c>&#34;TAIL_GUNNER&#34;</span>,
+</span></span><span style=display:flex><span>        value<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>0</span>,
+</span></span><span style=display:flex><span>      },
+</span></span><span style=display:flex><span>    ],
+</span></span><span style=display:flex><span>  };
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#8be9fd;font-style:italic>function</span> createTwinMultiLasers() {
+</span></span><span style=display:flex><span>  <span style=color:#ff79c6>return</span> {
+</span></span><span style=display:flex><span>    name<span style=color:#ff79c6>:</span> <span style=color:#f1fa8c>&#34;Multi Laser&#34;</span>,
+</span></span><span style=display:flex><span>    fireArc<span style=color:#ff79c6>:</span> [<span style=color:#f1fa8c>&#34;FRONT&#34;</span>],
+</span></span><span style=display:flex><span>    firePower<span style=color:#ff79c6>:</span> [<span style=color:#bd93f9>4</span>, <span style=color:#bd93f9>6</span>, <span style=color:#bd93f9>2</span>],
+</span></span><span style=display:flex><span>    damage<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>5</span>,
+</span></span><span style=display:flex><span>    ammonition<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>160</span>,
+</span></span><span style=display:flex><span>    specials<span style=color:#ff79c6>:</span> [],
+</span></span><span style=display:flex><span>  };
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#6272a4>// -- ------------------------------------------------------- --
+</span></span></span><span style=display:flex><span><span style=color:#6272a4>//  Aircrafts
+</span></span></span><span style=display:flex><span><span style=color:#6272a4>// -- ------------------------------------------------------- --
+</span></span></span><span style=display:flex><span><span style=color:#6272a4></span><span style=color:#8be9fd;font-style:italic>function</span> createFireRaptorGunship() {
+</span></span><span style=display:flex><span>  <span style=color:#ff79c6>return</span> {
+</span></span><span style=display:flex><span>    name<span style=color:#ff79c6>:</span> <span style=color:#f1fa8c>&#34;Fire Raptor Gunship&#34;</span>,
+</span></span><span style=display:flex><span>    aircraftClass<span style=color:#ff79c6>:</span> <span style=color:#f1fa8c>&#34;FIGHTER&#34;</span>,
+</span></span><span style=display:flex><span>    alliance<span style=color:#ff79c6>:</span> <span style=color:#f1fa8c>&#34;ADEPTUS_ASTARTES&#34;</span>,
+</span></span><span style=display:flex><span>    cost<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>31</span>,
+</span></span><span style=display:flex><span>    x<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>0</span>,
+</span></span><span style=display:flex><span>    y<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>0</span>,
+</span></span><span style=display:flex><span>    currentAltitude<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>0</span>,
+</span></span><span style=display:flex><span>    structure<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>4</span>,
+</span></span><span style=display:flex><span>    transport<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>0</span>,
+</span></span><span style=display:flex><span>    fuel<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>0</span>,
+</span></span><span style=display:flex><span>    throttle<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>2</span>,
+</span></span><span style=display:flex><span>    manoueuvres<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>5</span>,
+</span></span><span style=display:flex><span>    handling<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>3</span>,
+</span></span><span style=display:flex><span>    minSpeed<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>0</span>,
+</span></span><span style=display:flex><span>    maxSpeed<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>5</span>,
+</span></span><span style=display:flex><span>    currentSpeed<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>0</span>,
+</span></span><span style=display:flex><span>    maxAltitude<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>5</span>,
+</span></span><span style=display:flex><span>    src<span style=color:#ff79c6>:</span> <span style=color:#f1fa8c>&#34;file://./fireraptorgunship.png&#34;</span>,
+</span></span><span style=display:flex><span>    weapons<span style=color:#ff79c6>:</span> [
+</span></span><span style=display:flex><span>      createAvengerBoltCannon(),
+</span></span><span style=display:flex><span>      createHeavyBolterPortTurret(),
+</span></span><span style=display:flex><span>      createHeavyBolterStarboardTurret(),
+</span></span><span style=display:flex><span>      createHellstrikeMissleLauncher(),
+</span></span><span style=display:flex><span>    ],
+</span></span><span style=display:flex><span>    specials<span style=color:#ff79c6>:</span> [],
+</span></span><span style=display:flex><span>  };
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#8be9fd;font-style:italic>function</span> createStormEagleAssaultCraft() {
+</span></span><span style=display:flex><span>  <span style=color:#ff79c6>return</span> {
+</span></span><span style=display:flex><span>    name<span style=color:#ff79c6>:</span> <span style=color:#f1fa8c>&#34;Storm Eagle Assault Craft&#34;</span>,
+</span></span><span style=display:flex><span>    aircraftClass<span style=color:#ff79c6>:</span> <span style=color:#f1fa8c>&#34;FIGHTER&#34;</span>,
+</span></span><span style=display:flex><span>    alliance<span style=color:#ff79c6>:</span> <span style=color:#f1fa8c>&#34;ADEPTUS_ASTARTES&#34;</span>,
+</span></span><span style=display:flex><span>    cost<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>29</span>,
+</span></span><span style=display:flex><span>    x<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>0</span>,
+</span></span><span style=display:flex><span>    y<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>0</span>,
+</span></span><span style=display:flex><span>    currentAltitude<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>0</span>,
+</span></span><span style=display:flex><span>    structure<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>4</span>,
+</span></span><span style=display:flex><span>    transport<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>2</span>,
+</span></span><span style=display:flex><span>    fuel<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>0</span>,
+</span></span><span style=display:flex><span>    throttle<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>2</span>,
+</span></span><span style=display:flex><span>    manoueuvres<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>5</span>,
+</span></span><span style=display:flex><span>    handling<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>3</span>,
+</span></span><span style=display:flex><span>    minSpeed<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>0</span>,
+</span></span><span style=display:flex><span>    maxSpeed<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>5</span>,
+</span></span><span style=display:flex><span>    currentSpeed<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>0</span>,
+</span></span><span style=display:flex><span>    maxAltitude<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>5</span>,
+</span></span><span style=display:flex><span>    src<span style=color:#ff79c6>:</span> <span style=color:#f1fa8c>&#34;file://./stormeagleassaultcraft.png&#34;</span>,
+</span></span><span style=display:flex><span>    weapons<span style=color:#ff79c6>:</span> [
+</span></span><span style=display:flex><span>      createQuadLascannon(),
+</span></span><span style=display:flex><span>      createTwinHeavyBolters(),
+</span></span><span style=display:flex><span>      createDualFragMisslePods(),
+</span></span><span style=display:flex><span>    ],
+</span></span><span style=display:flex><span>    specials<span style=color:#ff79c6>:</span> [],
+</span></span><span style=display:flex><span>  };
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#8be9fd;font-style:italic>function</span> createXiphonInterceptor() {
+</span></span><span style=display:flex><span>  <span style=color:#ff79c6>return</span> {
+</span></span><span style=display:flex><span>    name<span style=color:#ff79c6>:</span> <span style=color:#f1fa8c>&#34;Xiphon Interceptor&#34;</span>,
+</span></span><span style=display:flex><span>    aircraftClass<span style=color:#ff79c6>:</span> <span style=color:#f1fa8c>&#34;FIGHTER&#34;</span>,
+</span></span><span style=display:flex><span>    alliance<span style=color:#ff79c6>:</span> <span style=color:#f1fa8c>&#34;ADEPTUS_ASTARTES&#34;</span>,
+</span></span><span style=display:flex><span>    cost<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>24</span>,
+</span></span><span style=display:flex><span>    x<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>0</span>,
+</span></span><span style=display:flex><span>    y<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>0</span>,
+</span></span><span style=display:flex><span>    currentAltitude<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>0</span>,
+</span></span><span style=display:flex><span>    structure<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>3</span>,
+</span></span><span style=display:flex><span>    transport<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>0</span>,
+</span></span><span style=display:flex><span>    fuel<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>0</span>,
+</span></span><span style=display:flex><span>    throttle<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>2</span>,
+</span></span><span style=display:flex><span>    manoueuvres<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>7</span>,
+</span></span><span style=display:flex><span>    handling<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>4</span>,
+</span></span><span style=display:flex><span>    minSpeed<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>2</span>,
+</span></span><span style=display:flex><span>    maxSpeed<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>6</span>,
+</span></span><span style=display:flex><span>    currentSpeed<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>0</span>,
+</span></span><span style=display:flex><span>    maxAltitude<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>5</span>,
+</span></span><span style=display:flex><span>    src<span style=color:#ff79c6>:</span> <span style=color:#f1fa8c>&#34;file://./xiphoninterceptor.png&#34;</span>,
+</span></span><span style=display:flex><span>    weapons<span style=color:#ff79c6>:</span> [createRotaryFragMissleLauncher(), createQuadLascannon()],
+</span></span><span style=display:flex><span>    specials<span style=color:#ff79c6>:</span> [],
+</span></span><span style=display:flex><span>  };
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#8be9fd;font-style:italic>function</span> createThunderhawkGunship() {
+</span></span><span style=display:flex><span>  <span style=color:#ff79c6>return</span> {
+</span></span><span style=display:flex><span>    name<span style=color:#ff79c6>:</span> <span style=color:#f1fa8c>&#34;Thunderhawk Gunship&#34;</span>,
+</span></span><span style=display:flex><span>    aircraftClass<span style=color:#ff79c6>:</span> <span style=color:#f1fa8c>&#34;BOMBER&#34;</span>,
+</span></span><span style=display:flex><span>    alliance<span style=color:#ff79c6>:</span> <span style=color:#f1fa8c>&#34;ADEPTUS_ASTARTES&#34;</span>,
+</span></span><span style=display:flex><span>    cost<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>44</span>,
+</span></span><span style=display:flex><span>    x<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>0</span>,
+</span></span><span style=display:flex><span>    y<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>0</span>,
+</span></span><span style=display:flex><span>    currentAltitude<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>0</span>,
+</span></span><span style=display:flex><span>    structure<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>8</span>,
+</span></span><span style=display:flex><span>    transport<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>4</span>,
+</span></span><span style=display:flex><span>    fuel<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>0</span>,
+</span></span><span style=display:flex><span>    throttle<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>2</span>,
+</span></span><span style=display:flex><span>    manoueuvres<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>4</span>,
+</span></span><span style=display:flex><span>    handling<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>3</span>,
+</span></span><span style=display:flex><span>    minSpeed<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>0</span>,
+</span></span><span style=display:flex><span>    maxSpeed<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>5</span>,
+</span></span><span style=display:flex><span>    currentSpeed<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>0</span>,
+</span></span><span style=display:flex><span>    maxAltitude<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>5</span>,
+</span></span><span style=display:flex><span>    src<span style=color:#ff79c6>:</span> <span style=color:#f1fa8c>&#34;file://./thunderhawkgunship.png&#34;</span>,
+</span></span><span style=display:flex><span>    weapons<span style=color:#ff79c6>:</span> [
+</span></span><span style=display:flex><span>      createTurboLaserDestructor(),
+</span></span><span style=display:flex><span>      createTwinLascannon(),
+</span></span><span style=display:flex><span>      createHeavyBolterPortTurret(),
+</span></span><span style=display:flex><span>      createHeavyBolterStarboardTurret(),
+</span></span><span style=display:flex><span>      createHeavyBolterPortWing(),
+</span></span><span style=display:flex><span>      createHeavyBolterStarboardWing(),
+</span></span><span style=display:flex><span>    ],
+</span></span><span style=display:flex><span>    specials<span style=color:#ff79c6>:</span> [],
+</span></span><span style=display:flex><span>  };
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#8be9fd;font-style:italic>function</span> createNightWing() {
+</span></span><span style=display:flex><span>  <span style=color:#ff79c6>return</span> {
+</span></span><span style=display:flex><span>    name<span style=color:#ff79c6>:</span> <span style=color:#f1fa8c>&#34;Nightwing&#34;</span>,
+</span></span><span style=display:flex><span>    aircraftClass<span style=color:#ff79c6>:</span> <span style=color:#f1fa8c>&#34;FIGHTER&#34;</span>,
+</span></span><span style=display:flex><span>    alliance<span style=color:#ff79c6>:</span> <span style=color:#f1fa8c>&#34;ELDAR_CRAFTWORLDS&#34;</span>,
+</span></span><span style=display:flex><span>    cost<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>21</span>,
+</span></span><span style=display:flex><span>    x<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>0</span>,
+</span></span><span style=display:flex><span>    y<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>0</span>,
+</span></span><span style=display:flex><span>    currentAltitude<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>0</span>,
+</span></span><span style=display:flex><span>    structure<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>2</span>,
+</span></span><span style=display:flex><span>    transport<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>0</span>,
+</span></span><span style=display:flex><span>    fuel<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>0</span>,
+</span></span><span style=display:flex><span>    throttle<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>3</span>,
+</span></span><span style=display:flex><span>    manoueuvres<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>8</span>,
+</span></span><span style=display:flex><span>    handling<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>2</span>,
+</span></span><span style=display:flex><span>    minSpeed<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>2</span>,
+</span></span><span style=display:flex><span>    maxSpeed<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>8</span>,
+</span></span><span style=display:flex><span>    currentSpeed<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>0</span>,
+</span></span><span style=display:flex><span>    maxAltitude<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>5</span>,
+</span></span><span style=display:flex><span>    src<span style=color:#ff79c6>:</span> <span style=color:#f1fa8c>&#34;file://./nightwing.png&#34;</span>,
+</span></span><span style=display:flex><span>    weapons<span style=color:#ff79c6>:</span> [createShurikenCannon(), createTwinStarcannon()],
+</span></span><span style=display:flex><span>    specials<span style=color:#ff79c6>:</span> [
+</span></span><span style=display:flex><span>      {
+</span></span><span style=display:flex><span>        keyword<span style=color:#ff79c6>:</span> <span style=color:#f1fa8c>&#34;JINK&#34;</span>,
+</span></span><span style=display:flex><span>        value<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>6</span>,
+</span></span><span style=display:flex><span>      },
+</span></span><span style=display:flex><span>    ],
+</span></span><span style=display:flex><span>  };
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#8be9fd;font-style:italic>function</span> createPhoenixBomber() {
+</span></span><span style=display:flex><span>  <span style=color:#ff79c6>return</span> {
+</span></span><span style=display:flex><span>    name<span style=color:#ff79c6>:</span> <span style=color:#f1fa8c>&#34;Phonix Bomber&#34;</span>,
+</span></span><span style=display:flex><span>    aircraftClass<span style=color:#ff79c6>:</span> <span style=color:#f1fa8c>&#34;FIGHTER&#34;</span>,
+</span></span><span style=display:flex><span>    alliance<span style=color:#ff79c6>:</span> <span style=color:#f1fa8c>&#34;ELDAR_CRAFTWORLDS&#34;</span>,
+</span></span><span style=display:flex><span>    cost<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>23</span>,
+</span></span><span style=display:flex><span>    x<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>0</span>,
+</span></span><span style=display:flex><span>    y<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>0</span>,
+</span></span><span style=display:flex><span>    currentAltitude<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>0</span>,
+</span></span><span style=display:flex><span>    structure<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>2</span>,
+</span></span><span style=display:flex><span>    transport<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>0</span>,
+</span></span><span style=display:flex><span>    fuel<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>0</span>,
+</span></span><span style=display:flex><span>    throttle<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>2</span>,
+</span></span><span style=display:flex><span>    manoueuvres<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>7</span>,
+</span></span><span style=display:flex><span>    handling<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>2</span>,
+</span></span><span style=display:flex><span>    minSpeed<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>2</span>,
+</span></span><span style=display:flex><span>    maxSpeed<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>6</span>,
+</span></span><span style=display:flex><span>    currentSpeed<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>0</span>,
+</span></span><span style=display:flex><span>    maxAltitude<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>5</span>,
+</span></span><span style=display:flex><span>    src<span style=color:#ff79c6>:</span> <span style=color:#f1fa8c>&#34;file://./phoenixbomber.png&#34;</span>,
+</span></span><span style=display:flex><span>    weapons<span style=color:#ff79c6>:</span> [
+</span></span><span style=display:flex><span>      createShurikenCannon(),
+</span></span><span style=display:flex><span>      createMissileArray(),
+</span></span><span style=display:flex><span>      createNightfireKrakMissileArray(),
+</span></span><span style=display:flex><span>      createNightfirePlasmaMissileArray(),
+</span></span><span style=display:flex><span>      createTwinStarcannon(),
+</span></span><span style=display:flex><span>    ],
+</span></span><span style=display:flex><span>    specials<span style=color:#ff79c6>:</span> [
+</span></span><span style=display:flex><span>      {
+</span></span><span style=display:flex><span>        keyword<span style=color:#ff79c6>:</span> <span style=color:#f1fa8c>&#34;JINK&#34;</span>,
+</span></span><span style=display:flex><span>        value<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>0</span>,
+</span></span><span style=display:flex><span>      },
+</span></span><span style=display:flex><span>    ],
+</span></span><span style=display:flex><span>  };
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#8be9fd;font-style:italic>function</span> createVampireRaider() {
+</span></span><span style=display:flex><span>  <span style=color:#ff79c6>return</span> {
+</span></span><span style=display:flex><span>    name<span style=color:#ff79c6>:</span> <span style=color:#f1fa8c>&#34;Vampire Raider&#34;</span>,
+</span></span><span style=display:flex><span>    aircraftClass<span style=color:#ff79c6>:</span> <span style=color:#f1fa8c>&#34;BOMBER&#34;</span>,
+</span></span><span style=display:flex><span>    alliance<span style=color:#ff79c6>:</span> <span style=color:#f1fa8c>&#34;ELDAR_CRAFTWORLDS&#34;</span>,
+</span></span><span style=display:flex><span>    cost<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>35</span>,
+</span></span><span style=display:flex><span>    x<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>0</span>,
+</span></span><span style=display:flex><span>    y<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>0</span>,
+</span></span><span style=display:flex><span>    currentAltitude<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>0</span>,
+</span></span><span style=display:flex><span>    structure<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>5</span>,
+</span></span><span style=display:flex><span>    transport<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>3</span>,
+</span></span><span style=display:flex><span>    fuel<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>0</span>,
+</span></span><span style=display:flex><span>    throttle<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>3</span>,
+</span></span><span style=display:flex><span>    manoueuvres<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>6</span>,
+</span></span><span style=display:flex><span>    handling<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>3</span>,
+</span></span><span style=display:flex><span>    minSpeed<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>2</span>,
+</span></span><span style=display:flex><span>    maxSpeed<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>7</span>,
+</span></span><span style=display:flex><span>    currentSpeed<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>0</span>,
+</span></span><span style=display:flex><span>    maxAltitude<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>5</span>,
+</span></span><span style=display:flex><span>    src<span style=color:#ff79c6>:</span> <span style=color:#f1fa8c>&#34;file://./vampireraider.png&#34;</span>,
+</span></span><span style=display:flex><span>    weapons<span style=color:#ff79c6>:</span> [
+</span></span><span style=display:flex><span>      createTwinLinkedShurikenCannon(),
+</span></span><span style=display:flex><span>      createNoseMountedScatterLaser(),
+</span></span><span style=display:flex><span>      createTwinLinkedPulseLasers(),
+</span></span><span style=display:flex><span>    ],
+</span></span><span style=display:flex><span>    specials<span style=color:#ff79c6>:</span> [
+</span></span><span style=display:flex><span>      {
+</span></span><span style=display:flex><span>        keyword<span style=color:#ff79c6>:</span> <span style=color:#f1fa8c>&#34;JUMP&#34;</span>,
+</span></span><span style=display:flex><span>        value<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>0</span>,
+</span></span><span style=display:flex><span>      },
+</span></span><span style=display:flex><span>      {
+</span></span><span style=display:flex><span>        keyword<span style=color:#ff79c6>:</span> <span style=color:#f1fa8c>&#34;TROOPS&#34;</span>,
+</span></span><span style=display:flex><span>        value<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>0</span>,
+</span></span><span style=display:flex><span>      },
+</span></span><span style=display:flex><span>    ],
+</span></span><span style=display:flex><span>  };
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#8be9fd;font-style:italic>function</span> createVampireHunter() {
+</span></span><span style=display:flex><span>  <span style=color:#ff79c6>return</span> {
+</span></span><span style=display:flex><span>    name<span style=color:#ff79c6>:</span> <span style=color:#f1fa8c>&#34;Vampire Hunter&#34;</span>,
+</span></span><span style=display:flex><span>    aircraftClass<span style=color:#ff79c6>:</span> <span style=color:#f1fa8c>&#34;BOMBER&#34;</span>,
+</span></span><span style=display:flex><span>    alliance<span style=color:#ff79c6>:</span> <span style=color:#f1fa8c>&#34;ELDAR_CRAFTWORLDS&#34;</span>,
+</span></span><span style=display:flex><span>    cost<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>35</span>,
+</span></span><span style=display:flex><span>    x<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>0</span>,
+</span></span><span style=display:flex><span>    y<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>0</span>,
+</span></span><span style=display:flex><span>    currentAltitude<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>0</span>,
+</span></span><span style=display:flex><span>    structure<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>5</span>,
+</span></span><span style=display:flex><span>    transport<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>0</span>,
+</span></span><span style=display:flex><span>    fuel<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>0</span>,
+</span></span><span style=display:flex><span>    throttle<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>3</span>,
+</span></span><span style=display:flex><span>    manoueuvres<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>6</span>,
+</span></span><span style=display:flex><span>    handling<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>3</span>,
+</span></span><span style=display:flex><span>    minSpeed<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>2</span>,
+</span></span><span style=display:flex><span>    maxSpeed<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>7</span>,
+</span></span><span style=display:flex><span>    currentSpeed<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>0</span>,
+</span></span><span style=display:flex><span>    maxAltitude<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>5</span>,
+</span></span><span style=display:flex><span>    src<span style=color:#ff79c6>:</span> <span style=color:#f1fa8c>&#34;file://./vampirehunter.png&#34;</span>,
+</span></span><span style=display:flex><span>    weapons<span style=color:#ff79c6>:</span> [
+</span></span><span style=display:flex><span>      createTwinLinkedPulsar(),
+</span></span><span style=display:flex><span>      createTwinBrightLances(),
+</span></span><span style=display:flex><span>      createNoseMountedScatterLaser(),
+</span></span><span style=display:flex><span>    ],
+</span></span><span style=display:flex><span>    specials<span style=color:#ff79c6>:</span> [
+</span></span><span style=display:flex><span>      {
+</span></span><span style=display:flex><span>        keyword<span style=color:#ff79c6>:</span> <span style=color:#f1fa8c>&#34;JUMP&#34;</span>,
+</span></span><span style=display:flex><span>        value<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>0</span>,
+</span></span><span style=display:flex><span>      },
+</span></span><span style=display:flex><span>      {
+</span></span><span style=display:flex><span>        keyword<span style=color:#ff79c6>:</span> <span style=color:#f1fa8c>&#34;TROOPS&#34;</span>,
+</span></span><span style=display:flex><span>        value<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>0</span>,
+</span></span><span style=display:flex><span>      },
+</span></span><span style=display:flex><span>    ],
+</span></span><span style=display:flex><span>  };
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#8be9fd;font-style:italic>function</span> createHemlockWraithFighter() {
+</span></span><span style=display:flex><span>  <span style=color:#ff79c6>return</span> {
+</span></span><span style=display:flex><span>    name<span style=color:#ff79c6>:</span> <span style=color:#f1fa8c>&#34;Hemlock Wraithfighter&#34;</span>,
+</span></span><span style=display:flex><span>    aircraftClass<span style=color:#ff79c6>:</span> <span style=color:#f1fa8c>&#34;FIGHTER&#34;</span>,
+</span></span><span style=display:flex><span>    alliance<span style=color:#ff79c6>:</span> <span style=color:#f1fa8c>&#34;ELDAR_CRAFTWORLDS&#34;</span>,
+</span></span><span style=display:flex><span>    cost<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>26</span>,
+</span></span><span style=display:flex><span>    x<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>0</span>,
+</span></span><span style=display:flex><span>    y<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>0</span>,
+</span></span><span style=display:flex><span>    currentAltitude<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>0</span>,
+</span></span><span style=display:flex><span>    structure<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>2</span>,
+</span></span><span style=display:flex><span>    transport<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>0</span>,
+</span></span><span style=display:flex><span>    fuel<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>0</span>,
+</span></span><span style=display:flex><span>    throttle<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>3</span>,
+</span></span><span style=display:flex><span>    manoueuvres<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>8</span>,
+</span></span><span style=display:flex><span>    handling<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>2</span>,
+</span></span><span style=display:flex><span>    minSpeed<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>2</span>,
+</span></span><span style=display:flex><span>    maxSpeed<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>8</span>,
+</span></span><span style=display:flex><span>    currentSpeed<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>0</span>,
+</span></span><span style=display:flex><span>    maxAltitude<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>5</span>,
+</span></span><span style=display:flex><span>    src<span style=color:#ff79c6>:</span> <span style=color:#f1fa8c>&#34;file://./hemlockwraithfighter.png&#34;</span>,
+</span></span><span style=display:flex><span>    weapons<span style=color:#ff79c6>:</span> [createHeavyDScythe()],
+</span></span><span style=display:flex><span>    specials<span style=color:#ff79c6>:</span> [
+</span></span><span style=display:flex><span>      {
+</span></span><span style=display:flex><span>        keyword<span style=color:#ff79c6>:</span> <span style=color:#f1fa8c>&#34;JINK&#34;</span>,
+</span></span><span style=display:flex><span>        value<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>0</span>,
+</span></span><span style=display:flex><span>      },
+</span></span><span style=display:flex><span>    ],
+</span></span><span style=display:flex><span>  };
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#8be9fd;font-style:italic>function</span> createNightshadeInterceptor() {
+</span></span><span style=display:flex><span>  <span style=color:#ff79c6>return</span> {
+</span></span><span style=display:flex><span>    name<span style=color:#ff79c6>:</span> <span style=color:#f1fa8c>&#34;Nightshade Interceptor&#34;</span>,
+</span></span><span style=display:flex><span>    aircraftClass<span style=color:#ff79c6>:</span> <span style=color:#f1fa8c>&#34;FIGHTER&#34;</span>,
+</span></span><span style=display:flex><span>    alliance<span style=color:#ff79c6>:</span> <span style=color:#f1fa8c>&#34;ELDAR_CRAFTWORLDS&#34;</span>,
+</span></span><span style=display:flex><span>    cost<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>25</span>,
+</span></span><span style=display:flex><span>    x<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>0</span>,
+</span></span><span style=display:flex><span>    y<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>0</span>,
+</span></span><span style=display:flex><span>    currentAltitude<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>0</span>,
+</span></span><span style=display:flex><span>    structure<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>2</span>,
+</span></span><span style=display:flex><span>    transport<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>0</span>,
+</span></span><span style=display:flex><span>    fuel<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>0</span>,
+</span></span><span style=display:flex><span>    throttle<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>4</span>,
+</span></span><span style=display:flex><span>    manoueuvres<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>8</span>,
+</span></span><span style=display:flex><span>    handling<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>2</span>,
+</span></span><span style=display:flex><span>    minSpeed<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>3</span>,
+</span></span><span style=display:flex><span>    maxSpeed<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>9</span>,
+</span></span><span style=display:flex><span>    currentSpeed<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>0</span>,
+</span></span><span style=display:flex><span>    maxAltitude<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>5</span>,
+</span></span><span style=display:flex><span>    src<span style=color:#ff79c6>:</span> <span style=color:#f1fa8c>&#34;file://./nightshadeinterceptor.png&#34;</span>,
+</span></span><span style=display:flex><span>    weapons<span style=color:#ff79c6>:</span> [createTwinBrightLances()],
+</span></span><span style=display:flex><span>    specials<span style=color:#ff79c6>:</span> [
+</span></span><span style=display:flex><span>      {
+</span></span><span style=display:flex><span>        keyword<span style=color:#ff79c6>:</span> <span style=color:#f1fa8c>&#34;JINK&#34;</span>,
+</span></span><span style=display:flex><span>        value<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>0</span>,
+</span></span><span style=display:flex><span>      },
+</span></span><span style=display:flex><span>    ],
+</span></span><span style=display:flex><span>  };
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#8be9fd;font-style:italic>function</span> createGrotBommer() {
+</span></span><span style=display:flex><span>  <span style=color:#ff79c6>return</span> {
+</span></span><span style=display:flex><span>    name<span style=color:#ff79c6>:</span> <span style=color:#f1fa8c>&#34;Grot Bommer&#34;</span>,
+</span></span><span style=display:flex><span>    aircraftClass<span style=color:#ff79c6>:</span> <span style=color:#f1fa8c>&#34;BOMBER&#34;</span>,
+</span></span><span style=display:flex><span>    alliance<span style=color:#ff79c6>:</span> <span style=color:#f1fa8c>&#34;ORC_HORDES&#34;</span>,
+</span></span><span style=display:flex><span>    cost<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>28</span>,
+</span></span><span style=display:flex><span>    x<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>0</span>,
+</span></span><span style=display:flex><span>    y<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>0</span>,
+</span></span><span style=display:flex><span>    currentAltitude<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>0</span>,
+</span></span><span style=display:flex><span>    structure<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>6</span>,
+</span></span><span style=display:flex><span>    transport<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>0</span>,
+</span></span><span style=display:flex><span>    fuel<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>0</span>,
+</span></span><span style=display:flex><span>    throttle<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>1</span>,
+</span></span><span style=display:flex><span>    manoueuvres<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>3</span>,
+</span></span><span style=display:flex><span>    handling<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>5</span>,
+</span></span><span style=display:flex><span>    minSpeed<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>2</span>,
+</span></span><span style=display:flex><span>    maxSpeed<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>4</span>,
+</span></span><span style=display:flex><span>    currentSpeed<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>0</span>,
+</span></span><span style=display:flex><span>    maxAltitude<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>4</span>,
+</span></span><span style=display:flex><span>    src<span style=color:#ff79c6>:</span> <span style=color:#f1fa8c>&#34;file://./grotbommer.png&#34;</span>,
+</span></span><span style=display:flex><span>    weapons<span style=color:#ff79c6>:</span> [
+</span></span><span style=display:flex><span>      createQuadBigShootas(),
+</span></span><span style=display:flex><span>      createPortShootaTurret(),
+</span></span><span style=display:flex><span>      createStarboardShootaTurret(),
+</span></span><span style=display:flex><span>      createGrotBomms(),
+</span></span><span style=display:flex><span>    ],
+</span></span><span style=display:flex><span>    specials<span style=color:#ff79c6>:</span> [],
+</span></span><span style=display:flex><span>  };
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#8be9fd;font-style:italic>function</span> createFightaBommer() {
+</span></span><span style=display:flex><span>  <span style=color:#ff79c6>return</span> {
+</span></span><span style=display:flex><span>    name<span style=color:#ff79c6>:</span> <span style=color:#f1fa8c>&#34;&#34;</span>,
+</span></span><span style=display:flex><span>    aircraftClass<span style=color:#ff79c6>:</span> <span style=color:#f1fa8c>&#34;FIGHTER&#34;</span>,
+</span></span><span style=display:flex><span>    alliance<span style=color:#ff79c6>:</span> <span style=color:#f1fa8c>&#34;ORC_HORDES&#34;</span>,
+</span></span><span style=display:flex><span>    cost<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>20</span>,
+</span></span><span style=display:flex><span>    x<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>0</span>,
+</span></span><span style=display:flex><span>    y<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>0</span>,
+</span></span><span style=display:flex><span>    currentAltitude<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>0</span>,
+</span></span><span style=display:flex><span>    structure<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>3</span>,
+</span></span><span style=display:flex><span>    transport<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>0</span>,
+</span></span><span style=display:flex><span>    fuel<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>0</span>,
+</span></span><span style=display:flex><span>    throttle<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>1</span>,
+</span></span><span style=display:flex><span>    manoueuvres<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>4</span>,
+</span></span><span style=display:flex><span>    handling<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>4</span>,
+</span></span><span style=display:flex><span>    minSpeed<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>3</span>,
+</span></span><span style=display:flex><span>    maxSpeed<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>7</span>,
+</span></span><span style=display:flex><span>    currentSpeed<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>0</span>,
+</span></span><span style=display:flex><span>    maxAltitude<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>4</span>,
+</span></span><span style=display:flex><span>    src<span style=color:#ff79c6>:</span> <span style=color:#f1fa8c>&#34;file://./fightabommer.png&#34;</span>,
+</span></span><span style=display:flex><span>    weapons<span style=color:#ff79c6>:</span> [
+</span></span><span style=display:flex><span>      createQuadBigShootas(),
+</span></span><span style=display:flex><span>      createBigShootaTurret(),
+</span></span><span style=display:flex><span>      createShootaTailGun(),
+</span></span><span style=display:flex><span>    ],
+</span></span><span style=display:flex><span>    specials<span style=color:#ff79c6>:</span> [],
+</span></span><span style=display:flex><span>  };
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#8be9fd;font-style:italic>function</span> createDakkaJet() {
+</span></span><span style=display:flex><span>  <span style=color:#ff79c6>return</span> {
+</span></span><span style=display:flex><span>    name<span style=color:#ff79c6>:</span> <span style=color:#f1fa8c>&#34;Dakka Jet&#34;</span>,
+</span></span><span style=display:flex><span>    aircraftClass<span style=color:#ff79c6>:</span> <span style=color:#f1fa8c>&#34;FIGHTER&#34;</span>,
+</span></span><span style=display:flex><span>    alliance<span style=color:#ff79c6>:</span> <span style=color:#f1fa8c>&#34;ORC_HORDES&#34;</span>,
+</span></span><span style=display:flex><span>    cost<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>16</span>,
+</span></span><span style=display:flex><span>    x<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>0</span>,
+</span></span><span style=display:flex><span>    y<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>0</span>,
+</span></span><span style=display:flex><span>    currentAltitude<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>0</span>,
+</span></span><span style=display:flex><span>    structure<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>2</span>,
+</span></span><span style=display:flex><span>    transport<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>0</span>,
+</span></span><span style=display:flex><span>    fuel<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>0</span>,
+</span></span><span style=display:flex><span>    throttle<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>2</span>,
+</span></span><span style=display:flex><span>    manoueuvres<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>5</span>,
+</span></span><span style=display:flex><span>    handling<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>4</span>,
+</span></span><span style=display:flex><span>    minSpeed<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>4</span>,
+</span></span><span style=display:flex><span>    maxSpeed<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>8</span>,
+</span></span><span style=display:flex><span>    currentSpeed<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>0</span>,
+</span></span><span style=display:flex><span>    maxAltitude<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>4</span>,
+</span></span><span style=display:flex><span>    src<span style=color:#ff79c6>:</span> <span style=color:#f1fa8c>&#34;file://./dakkajet.png&#34;</span>,
+</span></span><span style=display:flex><span>    weapons<span style=color:#ff79c6>:</span> [createQuadBigShootas()],
+</span></span><span style=display:flex><span>    specials<span style=color:#ff79c6>:</span> [],
+</span></span><span style=display:flex><span>  };
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#8be9fd;font-style:italic>function</span> createMarauder() {
+</span></span><span style=display:flex><span>  <span style=color:#ff79c6>return</span> {
+</span></span><span style=display:flex><span>    name<span style=color:#ff79c6>:</span> <span style=color:#f1fa8c>&#34;Marauder&#34;</span>,
+</span></span><span style=display:flex><span>    aircraftClass<span style=color:#ff79c6>:</span> <span style=color:#f1fa8c>&#34;BOMBER&#34;</span>,
+</span></span><span style=display:flex><span>    alliance<span style=color:#ff79c6>:</span> <span style=color:#f1fa8c>&#34;ASTRA_MILITARUM&#34;</span>,
+</span></span><span style=display:flex><span>    cost<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>23</span>,
+</span></span><span style=display:flex><span>    x<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>0</span>,
+</span></span><span style=display:flex><span>    y<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>0</span>,
+</span></span><span style=display:flex><span>    currentAltitude<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>0</span>,
+</span></span><span style=display:flex><span>    structure<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>5</span>,
+</span></span><span style=display:flex><span>    transport<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>0</span>,
+</span></span><span style=display:flex><span>    fuel<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>0</span>,
+</span></span><span style=display:flex><span>    throttle<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>1</span>,
+</span></span><span style=display:flex><span>    manoueuvres<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>3</span>,
+</span></span><span style=display:flex><span>    handling<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>4</span>,
+</span></span><span style=display:flex><span>    minSpeed<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>2</span>,
+</span></span><span style=display:flex><span>    maxSpeed<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>5</span>,
+</span></span><span style=display:flex><span>    currentSpeed<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>0</span>,
+</span></span><span style=display:flex><span>    maxAltitude<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>5</span>,
+</span></span><span style=display:flex><span>    src<span style=color:#ff79c6>:</span> <span style=color:#f1fa8c>&#34;file://./marauder.png&#34;</span>,
+</span></span><span style=display:flex><span>    weapons<span style=color:#ff79c6>:</span> [
+</span></span><span style=display:flex><span>      createLascannon(),
+</span></span><span style=display:flex><span>      createDorsalBolterTurret(),
+</span></span><span style=display:flex><span>      createRearBolterTurret(),
+</span></span><span style=display:flex><span>      createBombBay(),
+</span></span><span style=display:flex><span>    ],
+</span></span><span style=display:flex><span>    specials<span style=color:#ff79c6>:</span> [],
+</span></span><span style=display:flex><span>  };
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#8be9fd;font-style:italic>function</span> createThunderboltFury() {
+</span></span><span style=display:flex><span>  <span style=color:#ff79c6>return</span> {
+</span></span><span style=display:flex><span>    name<span style=color:#ff79c6>:</span> <span style=color:#f1fa8c>&#34;Thunderbolt Fury&#34;</span>,
+</span></span><span style=display:flex><span>    aircraftClass<span style=color:#ff79c6>:</span> <span style=color:#f1fa8c>&#34;FIGHTER&#34;</span>,
+</span></span><span style=display:flex><span>    alliance<span style=color:#ff79c6>:</span> <span style=color:#f1fa8c>&#34;ASTRA_MILITARUM&#34;</span>,
+</span></span><span style=display:flex><span>    cost<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>23</span>,
+</span></span><span style=display:flex><span>    x<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>0</span>,
+</span></span><span style=display:flex><span>    y<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>0</span>,
+</span></span><span style=display:flex><span>    currentAltitude<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>0</span>,
+</span></span><span style=display:flex><span>    structure<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>3</span>,
+</span></span><span style=display:flex><span>    transport<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>0</span>,
+</span></span><span style=display:flex><span>    fuel<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>0</span>,
+</span></span><span style=display:flex><span>    throttle<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>2</span>,
+</span></span><span style=display:flex><span>    manoueuvres<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>6</span>,
+</span></span><span style=display:flex><span>    handling<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>3</span>,
+</span></span><span style=display:flex><span>    minSpeed<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>2</span>,
+</span></span><span style=display:flex><span>    maxSpeed<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>6</span>,
+</span></span><span style=display:flex><span>    currentSpeed<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>0</span>,
+</span></span><span style=display:flex><span>    maxAltitude<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>5</span>,
+</span></span><span style=display:flex><span>    src<span style=color:#ff79c6>:</span> <span style=color:#f1fa8c>&#34;file://./thunderboltfury.png&#34;</span>,
+</span></span><span style=display:flex><span>    weapons<span style=color:#ff79c6>:</span> [createAvengerBoltCannon(), createTwinLascannon()],
+</span></span><span style=display:flex><span>    specials<span style=color:#ff79c6>:</span> [],
+</span></span><span style=display:flex><span>  };
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#8be9fd;font-style:italic>function</span> createAvenger() {
+</span></span><span style=display:flex><span>  <span style=color:#ff79c6>return</span> {
+</span></span><span style=display:flex><span>    name<span style=color:#ff79c6>:</span> <span style=color:#f1fa8c>&#34;Avenger&#34;</span>,
+</span></span><span style=display:flex><span>    aircraftClass<span style=color:#ff79c6>:</span> <span style=color:#f1fa8c>&#34;FIGHTER&#34;</span>,
+</span></span><span style=display:flex><span>    alliance<span style=color:#ff79c6>:</span> <span style=color:#f1fa8c>&#34;ASTRA_MILITARUM&#34;</span>,
+</span></span><span style=display:flex><span>    cost<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>20</span>,
+</span></span><span style=display:flex><span>    x<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>0</span>,
+</span></span><span style=display:flex><span>    y<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>0</span>,
+</span></span><span style=display:flex><span>    currentAltitude<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>0</span>,
+</span></span><span style=display:flex><span>    structure<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>2</span>,
+</span></span><span style=display:flex><span>    transport<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>0</span>,
+</span></span><span style=display:flex><span>    fuel<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>0</span>,
+</span></span><span style=display:flex><span>    throttle<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>1</span>,
+</span></span><span style=display:flex><span>    manoueuvres<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>6</span>,
+</span></span><span style=display:flex><span>    handling<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>2</span>,
+</span></span><span style=display:flex><span>    minSpeed<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>1</span>,
+</span></span><span style=display:flex><span>    maxSpeed<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>6</span>,
+</span></span><span style=display:flex><span>    currentSpeed<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>0</span>,
+</span></span><span style=display:flex><span>    maxAltitude<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>5</span>,
+</span></span><span style=display:flex><span>    src<span style=color:#ff79c6>:</span> <span style=color:#f1fa8c>&#34;file://./avenger.png&#34;</span>,
+</span></span><span style=display:flex><span>    weapons<span style=color:#ff79c6>:</span> [createAvengerBoltCannon(), createHeavyStubber()],
+</span></span><span style=display:flex><span>    specials<span style=color:#ff79c6>:</span> [],
+</span></span><span style=display:flex><span>  };
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#8be9fd;font-style:italic>function</span> createVendettaAssaultCraft() {
+</span></span><span style=display:flex><span>  <span style=color:#ff79c6>return</span> {
+</span></span><span style=display:flex><span>    name<span style=color:#ff79c6>:</span> <span style=color:#f1fa8c>&#34;Vendetta Assault Craft&#34;</span>,
+</span></span><span style=display:flex><span>    aircraftClass<span style=color:#ff79c6>:</span> <span style=color:#f1fa8c>&#34;FIGHTER&#34;</span>,
+</span></span><span style=display:flex><span>    alliance<span style=color:#ff79c6>:</span> <span style=color:#f1fa8c>&#34;ASTRA_MILITARUM&#34;</span>,
+</span></span><span style=display:flex><span>    cost<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>17</span>,
+</span></span><span style=display:flex><span>    x<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>0</span>,
+</span></span><span style=display:flex><span>    y<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>0</span>,
+</span></span><span style=display:flex><span>    currentAltitude<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>0</span>,
+</span></span><span style=display:flex><span>    structure<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>3</span>,
+</span></span><span style=display:flex><span>    transport<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>3</span>,
+</span></span><span style=display:flex><span>    fuel<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>0</span>,
+</span></span><span style=display:flex><span>    throttle<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>1</span>,
+</span></span><span style=display:flex><span>    manoueuvres<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>4</span>,
+</span></span><span style=display:flex><span>    handling<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>4</span>,
+</span></span><span style=display:flex><span>    minSpeed<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>0</span>,
+</span></span><span style=display:flex><span>    maxSpeed<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>5</span>,
+</span></span><span style=display:flex><span>    currentSpeed<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>0</span>,
+</span></span><span style=display:flex><span>    maxAltitude<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>4</span>,
+</span></span><span style=display:flex><span>    src<span style=color:#ff79c6>:</span> <span style=color:#f1fa8c>&#34;file://./vendettaassaultcraft.png&#34;</span>,
+</span></span><span style=display:flex><span>    weapons<span style=color:#ff79c6>:</span> [createTwinLascannon()],
+</span></span><span style=display:flex><span>    specials<span style=color:#ff79c6>:</span> [],
+</span></span><span style=display:flex><span>  };
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#8be9fd;font-style:italic>function</span> createHellion() {
+</span></span><span style=display:flex><span>  <span style=color:#ff79c6>return</span> {
+</span></span><span style=display:flex><span>    name<span style=color:#ff79c6>:</span> <span style=color:#f1fa8c>&#34;Hellion&#34;</span>,
+</span></span><span style=display:flex><span>    aircraftClass<span style=color:#ff79c6>:</span> <span style=color:#f1fa8c>&#34;FIGHTER&#34;</span>,
+</span></span><span style=display:flex><span>    alliance<span style=color:#ff79c6>:</span> <span style=color:#f1fa8c>&#34;ASTRA_MILITARUM&#34;</span>,
+</span></span><span style=display:flex><span>    cost<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>26</span>,
+</span></span><span style=display:flex><span>    x<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>0</span>,
+</span></span><span style=display:flex><span>    y<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>0</span>,
+</span></span><span style=display:flex><span>    currentAltitude<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>0</span>,
+</span></span><span style=display:flex><span>    structure<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>2</span>,
+</span></span><span style=display:flex><span>    transport<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>0</span>,
+</span></span><span style=display:flex><span>    fuel<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>0</span>,
+</span></span><span style=display:flex><span>    throttle<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>3</span>,
+</span></span><span style=display:flex><span>    manoueuvres<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>7</span>,
+</span></span><span style=display:flex><span>    handling<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>2</span>,
+</span></span><span style=display:flex><span>    minSpeed<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>2</span>,
+</span></span><span style=display:flex><span>    maxSpeed<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>8</span>,
+</span></span><span style=display:flex><span>    currentSpeed<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>0</span>,
+</span></span><span style=display:flex><span>    maxAltitude<span style=color:#ff79c6>:</span> <span style=color:#bd93f9>5</span>,
+</span></span><span style=display:flex><span>    src<span style=color:#ff79c6>:</span> <span style=color:#f1fa8c>&#34;file://./hellion.png&#34;</span>,
+</span></span><span style=display:flex><span>    weapons<span style=color:#ff79c6>:</span> [createTwinMultiLasers()],
+</span></span><span style=display:flex><span>    specials<span style=color:#ff79c6>:</span> [],
+</span></span><span style=display:flex><span>  };
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#8be9fd;font-style:italic>let</span> aircrafts <span style=color:#ff79c6>=</span> [
+</span></span><span style=display:flex><span>  createFireRaptorGunship(),
+</span></span><span style=display:flex><span>  createStormEagleAssaultCraft(),
+</span></span><span style=display:flex><span>  createXiphonInterceptor(),
+</span></span><span style=display:flex><span>  createThunderhawkGunship(),
+</span></span><span style=display:flex><span>  createNightWing(),
+</span></span><span style=display:flex><span>  createPhoenixBomber(),
+</span></span><span style=display:flex><span>  createVampireRaider(),
+</span></span><span style=display:flex><span>  createVampireHunter(),
+</span></span><span style=display:flex><span>  createHemlockWraithFighter(),
+</span></span><span style=display:flex><span>  createNightshadeInterceptor(),
+</span></span><span style=display:flex><span>  createGrotBommer(),
+</span></span><span style=display:flex><span>  createFightaBommer(),
+</span></span><span style=display:flex><span>  createDakkaJet(),
+</span></span><span style=display:flex><span>  createMarauder(),
+</span></span><span style=display:flex><span>  createThunderboltFury(),
+</span></span><span style=display:flex><span>  createAvenger(),
+</span></span><span style=display:flex><span>  createVendettaAssaultCraft(),
+</span></span><span style=display:flex><span>  createHellion(),
+</span></span><span style=display:flex><span>];
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#6272a4>// -- -----------------------------------------------------------------------------
+</span></span></span><span style=display:flex><span><span style=color:#6272a4>// -- 1. Beispiel
+</span></span></span><span style=display:flex><span><span style=color:#6272a4>// -- -----------------------------------------------------------------------------
+</span></span></span><span style=display:flex><span><span style=color:#6272a4>// Legen Sie für die unterschiedlichen Flotten jeweils ein eigenes Array an:
+</span></span></span><span style=display:flex><span><span style=color:#6272a4></span>console.log(<span style=color:#f1fa8c>&#34;Exercise 1: Fleets&#34;</span>);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#6272a4>// i) ADEPTUS_ASTARTES
+</span></span></span><span style=display:flex><span><span style=color:#6272a4>// console.log(adeptusAstartesAircrafts.length); // 4
+</span></span></span><span style=display:flex><span><span style=color:#6272a4></span>
+</span></span><span style=display:flex><span><span style=color:#6272a4>// ii) ELDAR_CRAFTWORLDS
+</span></span></span><span style=display:flex><span><span style=color:#6272a4>// console.log(eldarAircrafts.length); // 6
+</span></span></span><span style=display:flex><span><span style=color:#6272a4></span>
+</span></span><span style=display:flex><span><span style=color:#6272a4>// iii) ORC_HORDES
+</span></span></span><span style=display:flex><span><span style=color:#6272a4>// console.log(orcAircrafts.length); // 3
+</span></span></span><span style=display:flex><span><span style=color:#6272a4></span>
+</span></span><span style=display:flex><span><span style=color:#6272a4>// iv) ASTRA_MILITARUM
+</span></span></span><span style=display:flex><span><span style=color:#6272a4>// console.log(militarumAircrafts.length); // 5
+</span></span></span><span style=display:flex><span><span style=color:#6272a4></span>
+</span></span><span style=display:flex><span><span style=color:#6272a4>// -- -----------------------------------------------------------------------------
+</span></span></span><span style=display:flex><span><span style=color:#6272a4>// -- 2. Beispiel
+</span></span></span><span style=display:flex><span><span style=color:#6272a4>// -- -----------------------------------------------------------------------------
+</span></span></span><span style=display:flex><span><span style=color:#6272a4>// Finden Sie alle ELDAR_CRAFTWORLDS (alliance) Bomber (aircraftClass - &#34;BOMBER&#34;).
+</span></span></span><span style=display:flex><span><span style=color:#6272a4>// Die Schiffe dürfen nicht teurer sein als 35 (cost).
+</span></span></span><span style=display:flex><span><span style=color:#6272a4></span>
+</span></span><span style=display:flex><span>console.log(<span style=color:#f1fa8c>&#34;Exercise 2: Eldar Bomber Fleet&#34;</span>);
+</span></span><span style=display:flex><span><span style=color:#6272a4>// console.log(...eldarBomberFleet);
+</span></span></span><span style=display:flex><span><span style=color:#6272a4></span>
+</span></span><span style=display:flex><span><span style=color:#6272a4>// -- -----------------------------------------------------------------------------
+</span></span></span><span style=display:flex><span><span style=color:#6272a4>// -- 3. Beispiel
+</span></span></span><span style=display:flex><span><span style=color:#6272a4>// -- -----------------------------------------------------------------------------
+</span></span></span><span style=display:flex><span><span style=color:#6272a4>// Zur besseren Klassifizierung der Flugzeuge, soll jedem Flugzeug eine
+</span></span></span><span style=display:flex><span><span style=color:#6272a4>// Liste von Schlüsselwörtern zugeordnet werden.
+</span></span></span><span style=display:flex><span><span style=color:#6272a4></span>
+</span></span><span style=display:flex><span><span style=color:#6272a4>// i) Definieren Sie für jedes aircraft Objekt ein keywords. Das Feld
+</span></span></span><span style=display:flex><span><span style=color:#6272a4>//    ist ein Array
+</span></span></span><span style=display:flex><span><span style=color:#6272a4></span>
+</span></span><span style=display:flex><span><span style=color:#6272a4>// ii) Fügen Sie für eine Einheit ein Schlüsselwort zum keywords array
+</span></span></span><span style=display:flex><span><span style=color:#6272a4>//     hinzu, wenn die gegebene Bedingung zutrifft.
+</span></span></span><span style=display:flex><span><span style=color:#6272a4></span>
+</span></span><span style=display:flex><span><span style=color:#6272a4>// GUNSHIP ... The Aircraft has more than 5 Weaponplatfoms (weapons.length)
+</span></span></span><span style=display:flex><span><span style=color:#6272a4></span>
+</span></span><span style=display:flex><span><span style=color:#6272a4>// CLOSE_RANGE_FIGHTER ... Die Summe der Werte der firePower[0] Property,
+</span></span></span><span style=display:flex><span><span style=color:#6272a4>// über alle Waffenplatformen des Flugzeugs hinweg muß insgesamt grösser
+</span></span></span><span style=display:flex><span><span style=color:#6272a4>// gleich 10 sind.
+</span></span></span><span style=display:flex><span><span style=color:#6272a4></span>
+</span></span><span style=display:flex><span><span style=color:#6272a4>// LONG_RANGE_FIGHTER ... Die Summe der Werte der firePower[2] Property,
+</span></span></span><span style=display:flex><span><span style=color:#6272a4>// über alle Waffenplatformen des Flugzeugs hinweg muß insgesamt grösser
+</span></span></span><span style=display:flex><span><span style=color:#6272a4>// gleich 10 sind.
+</span></span></span><span style=display:flex><span><span style=color:#6272a4></span>
+</span></span><span style=display:flex><span><span style=color:#6272a4>// &lt;ALLIANCE&gt;  ... Schreiben Sie die Alliance des Flugzeugs in Uppercase
+</span></span></span><span style=display:flex><span><span style=color:#6272a4>// als Keywords.
+</span></span></span><span style=display:flex><span><span style=color:#6272a4></span>
+</span></span><span style=display:flex><span>console.log(<span style=color:#f1fa8c>&#34;Exercise 3: Aircrafts with keywords:&#34;</span>);
+</span></span><span style=display:flex><span><span style=color:#6272a4>// console.log(...aircraftsWithKeywords);
+</span></span></span><span style=display:flex><span><span style=color:#6272a4></span>
+</span></span><span style=display:flex><span><span style=color:#6272a4>// Geben Sie jene aircrafts aus die zumindestens 2 Keywords haben.
+</span></span></span><span style=display:flex><span><span style=color:#6272a4></span>console.log(<span style=color:#f1fa8c>&#34;Exercise 3: Aircrafts with many keywords:&#34;</span>);
+</span></span><span style=display:flex><span><span style=color:#6272a4>// console.log(...aircraftsWithManyKeywords);
+</span></span></span></code></pre></div></article><hr><div class=page-end id=footer><div class=backlinks-container><h3>Backlinks</h3><ul class=backlinks><li>No backlinks found</li></ul></div><div><script src=https://cdn.jsdelivr.net/npm/d3@6.7.0/dist/d3.min.js integrity="sha256-+7jaYCp29O1JusNWHaYtgUn6EhuP0VaFuswhNV06MyI=" crossorigin=anonymous></script><h3>Interactive Graph</h3><div id=graph-container></div><style>:root{--g-node:var(--secondary);--g-node-active:var(--primary);--g-node-inactive:var(--visited);--g-link:var(--outlinegray);--g-link-active:#5a7282}</style><script src=https://deep-thought.norwin.at/js/graph.6579af7b10c818dbd2ca038702db0224.js></script></div></div><div id=contact_buttons><footer><p>Made by Norbert Winkler using <a href=https://github.com/jackyzha0/quartz>Quartz</a>, © 2024</p><ul><li><a href=https://deep-thought.norwin.at>Home</a></li><li><a href=https://twitter.com/n0rwin>Twitter</a></li><li><a href=https://github.com/n0rwin>GitHub</a></li></ul></footer></div></div></body></html>
